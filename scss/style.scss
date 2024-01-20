@@ -1,0 +1,153 @@
+@use "sass:math";
+
+// Підключення шрифтів
+@import "_fonts.scss";
+
+// Скидання стилів
+@import "_reset.scss";
+
+// Функції
+@import "_function.scss";
+
+// Компоненти, сторінки
+@import "_common.scss";
+
+
+// Компоненти, сторінки
+@import "header.css";
+
+
+
+
+
+body {
+	$colorBody: #0e0d0d;
+	$backgroundBody: #fbf0e6;
+	font-size: toRem(16);
+}
+
+
+
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+	
+
+	display: flex;			//прижимаем футер книзу
+	flex-direction: column; //прижимаем футер книзу
+}
+.wrapper main {
+	flex-grow: 1;			//прижимаем футер книзу
+}
+
+
+// для усіх "__container" однаково
+[class*="__container"] {
+	max-width: 1270px;/* 1240 + 15 + 15 */
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+//SCSS основні стилі 
+.hero {
+	background: url(../img/Frame28.png) #0e0d0d;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: auto auto;
+
+	padding: toRem(160) toRem(0) toRem(20);
+	@media(max-width: toEm(960)) {
+		padding: toRem(100) toRem(0) toRem(20);
+	}
+	@media(max-width: toEm(767)) {
+		padding: toRem(80) toRem(0) toRem(20);
+	}
+	height: 100svh;
+
+	// .hero__container
+	&__container {
+		display: grid; 		// пишемо 'ДЛЯ ВИРІВНЮВАННЯ КОНТЕНТУ' у картці право-центр-ліво
+	}
+
+	&__content {
+		max-width: toRem(750);
+		padding: toRem(10);
+		& > *:last-child {
+			margin-bottom: toEm(0);
+		}
+
+		justify-self: end;	 // пишемо 'ДЛЯ ВИРІВНЮВАННЯ КОНТЕНТУ' у картці право-центр-ліво
+		align-self: end;
+		border: toRem(1) solid red;
+
+		& h1 {
+			font-size: toRem(50);
+			text-transform: uppercase;
+			text-align: center;
+			color: $backgroundBody;
+			padding: toRem(20);
+			justify-self: center;
+			@media(max-width: toEm(460)) {
+				margin-bottom: toEm(10);
+			}
+			@media(max-width: toEm(460)) {
+				margin-bottom: toEm(25);
+			}
+			@media(max-width: toEm(375)) {
+				font-size: toRem(45);
+				padding: toRem(5);
+				margin-bottom: toEm(40);
+			}
+		}
+	}
+
+	// .hero__img
+	&__img {
+		max-width: toRem(450); 	//задаем ширину обьекту-оболочке
+	}
+	&__img img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 200 /150;	 //задаем высоту фото
+		object-fit: contain;
+		padding: toRem(20);
+		justify-self: start;	 // пишемо 'ДЛЯ ВИРІВНЮВАННЯ КОНТЕНТУ' у картці право-центр-ліво
+
+		@media(max-width: toEm(450)) {
+			height: 100%;
+			aspect-ratio: 100 / 70;
+		}
+		@media(max-width: toEm(400)) {
+			margin-bottom: toEm(30);
+		}
+		@media(max-width: toEm(375)) {
+			height: 100%;
+			aspect-ratio: 90 / 80;
+			padding: toRem(5);
+		}
+		@media(max-width: toEm(375)) {
+			margin-bottom: toEm(50);
+		}
+	}
+
+	// .hero__scales
+	&__scales {
+		max-width: toRem(450); 		//задаем ширину обьекту-оболочке
+	}
+	&__scales img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 200 / 100;	 //задаем высоту фото
+		object-fit: contain;
+		padding: toRem(20);
+		justify-self: start;	 // пишемо 'ДЛЯ ВИРІВНЮВАННЯ КОНТЕНТУ' у картці право-центр-ліво
+
+		@media(max-width: toEm(604)) {
+			aspect-ratio: 250 / 100;
+		}
+		@media(max-width: toEm(375)) {
+			padding: toRem(5);
+		}
+	}
+}

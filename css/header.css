@@ -1,0 +1,387 @@
+
+/* ---header---- */
+.header {
+	position: fixed;
+	width: 100%;
+	
+	z-index: 50;
+	background-color: #1c1b1b;
+}
+
+.header__container {
+	display: flex;
+	padding: 0px 15px;/* відступи безбеки меню від ЛОГО і button по боках */
+	align-items: center;/* ставимо усі елементи на одному рівні по висоті! */
+	min-height: 100px;
+	gap: 8px;/* не дасть злипнутись ЛОГО, меню, button */
+	padding-top: 5px;/* щоб пункти меню не прилипали до верху і низу header */
+	padding-bottom: 5px;/* щоб пункти меню не прилипали до верху і низу header */
+}
+
+.header__logo {
+	color: #ffffff;
+	font-family: 'CoreSansC-75ExtraBold';
+	font-size: 30px;
+	font-style: italic;
+	font-weight: 700;
+	line-height: 1.26;
+	flex-shrink: 0;		/* щоб логотип не переносився на другий рядок при зменшенні екрану */
+	
+	position: relative;
+	/* дістаємо наверх для адаптиву */
+	z-index: 5;
+	/* дістаємо наверх для адаптиву */
+}
+
+.menu {
+	flex: 1 1 auto;
+	/* робимо меню на всю ширину між ЛОГО і іконками */
+}
+
+/* .menu__body {}  тут будемо робити бургер-меню*/
+
+/* ul */
+.menu__list {
+	display: flex;
+	/* ставимо меню ПО ЦЕНТРУ */
+	justify-content: center;
+	/* ставимо меню ПО ЦЕНТРУ */
+	column-gap: 36px;
+	/* відступи між пунктами меню */
+	row-gap: 8px;
+	/* при переносі пунктів меню відступи */
+	flex-wrap: wrap;
+}
+
+/* .menu__item {} */
+
+.menu__item--vip .menu__link {
+	/* звертаємося одразу до 2х класів */
+	font-weight: 700;
+	text-decoration: underline;
+	color: #ffda8b;
+}
+
+/* пункти меню */
+.menu__link {
+	color: #ffffff;
+	font-family: 'CoreSansC-55Medium';
+	font-size: 20px;
+	transition: color 0.3s;
+}
+
+.menu__link:hover {
+	text-decoration: underline;
+}
+
+
+
+/* модифікатор */
+/* <!-- menu__item--parent модифікатор для стрілки вниз --> */
+.menu__item--parent {
+	position: relative;
+	/* ---position для sub-menu--- */
+}
+
+.menu__item--parent .menu__link {
+	/* звертаємось  одразу до 2 тегів*/
+	display: flex;
+	/* ставимо стрілку по центру пункта меню */
+	align-items: center;
+	/* ставимо стрілку по центру пункта меню */
+	gap: 4px;
+}
+
+@media (any-hover: hover) {
+
+	/* прибираємо -hover- на тачюскрінах */
+	.menu__item--parent .menu__link::after {
+		/* звертаємось  одразу до 2 тегів*/
+		content: '';
+		display: inline-block;
+		background-image: url(../img2/arrow.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 16px;
+		height: 8px;
+		flex: 0 0 16px;
+
+		transition: transform 0.3s;
+		/* для руху стрілки */
+	}
+}
+
+
+
+/* ----------показуємо sub-menu---------------- */
+.menu__item--parent:hover .sub-menu {
+	opacity: 1;
+	transform: translate(0px, 0px);
+	visibility: visible;
+	/* -------показуємо sub-menu------- */
+
+	/* Чудова властивість */
+	pointer-events: all;
+	/* це взаємодія на сам перед з ПУНКТОМ МЕНЮ */
+}
+
+/* ----------------sub-menu--------------- */
+.sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding-top: 5px;
+	/* робимо не розривним меню і sub-menu! */
+
+	transform: translate(0px, 10%);
+	/* з'являється знизу у верх */
+	opacity: 0;
+	/* плавність */
+	visibility: hidden;
+	/* -------сховали sub-menu------- */
+	transition: all 0.3s;
+
+	/* Чудова властивість */
+	pointer-events: none;
+	/* це взаємодія на сам перед з ПУНКТОМ МЕНЮ */
+}
+
+.sub-menu__list {
+	width: 200px;
+	/* ширина фона sub-menu */
+	border-radius: 15px;
+	padding: 15px;
+	background-color: rgba(34, 73, 64, 0.323); /* фон під саб меню */
+	color: #ffffff;
+	/* color фона sub-menu */
+}
+
+/* .sub-menu__item {} */
+
+.sub-menu__item:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.sub-menu__link {
+	color: #ffffff;
+	font-size: 18px;
+	transition: all 0.3s;
+	line-height: 130%;
+}
+
+@media (any-hover: hover) {
+
+	/* прибираємо -hover- на тач-скрінах */
+	.sub-menu__link:hover {
+		text-decoration: underline;
+	}
+}
+
+
+/* ----------крутимо стрілку---------------- */
+.menu__item--parent:hover .menu__link::after {
+	transform: rotate(-180deg);
+}
+
+
+
+
+@media (any-hover: hover) {
+
+}
+
+
+/* ---------------------------переходим к верстке БУРГЕР-МЕНЮ---------------------------------- */
+.icon-menu {
+	display: none;
+	/* сховали полоски бургер */
+}
+
+
+
+/* ------------адаптив--------------- */
+@media (max-width:960px) {
+	.header__container {
+		/* зменшуємо шапку */
+		min-height: 50px;
+	}
+
+	/* ----------------------БУРГЕР-МЕНЮ------------------------- */
+	.menu__body {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		/* буде скролл у низ */
+		top: -100%;
+		right: 0;
+		/* буде виїзджати ЗВЕРХУ */
+		transition: top 0.3s;
+		/* буде виїзджати ЗВЕРХУ */
+		z-index: 3px;
+		/*background-color: rgb(240, 252, 15);*/
+		padding: 80px 15px 30px 15px;
+		background: linear-gradient(45deg, rgba(255, 197, 8, 0.9), rgba(251, 255, 24, 0.9)), 
+		url(../img2/klipartz01.png) center right no-repeat;
+		background-size: cover;
+
+
+
+	}
+
+	.menu__body::before {
+		/* така шапка під яку заходять меню при скролі */
+		content: "";
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		/* px вже значення як зменшили */
+		top: 100%;
+		right: 0;			/* буде виїзджати ЗВЕРХУ */
+		transition: top 0.3s;/* буде виїзджати ЗВЕРХУ */
+		background-color: #ff6b15;
+	}
+
+	.menu-open .menu__body,
+	.menu-open .menu__body::before {
+		top: 0;
+		z-index: 3;				/* плашку ставимо НАВЕРХ контенту */
+	}
+/* ----------------------БУРГЕР-МЕНЮ------------------------- */
+
+
+
+	/* ul ставимо меню в КОЛОНКУ і з ПРАВА */
+	.menu__list {
+		flex-direction: column;
+		/* align-items: right;  - так буде ЗЛІВА*/
+		text-align: right;
+		/*   - так буде ЗПРАВА*/
+		row-gap: 28px;
+		/* збільшуємо відступи між пунктами меню */
+	}
+
+	/* пункти меню */
+	.menu__link {
+		font-size: 28px;
+		/* збільшуємо відступи самі пункти меню */
+	}
+
+	.menu__item--parent .menu__link {
+		display: block;
+		/* прибрали галочку від пункта */
+	}
+
+	.menu__item--parent .menu__link::after {
+		display: none;
+		/* прибрали галочку від пункта */
+	}
+
+	.sub-menu {
+		position: relative;
+		visibility: visible;
+		padding-top: 10px;
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+
+	.sub-menu__list {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.sub-menu__item:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	.sub-menu__link {
+		font-size: 24px;
+		color: #FFF;
+	}
+
+
+	/* --------------------------створюємо бургер------------------------ */
+	.icon-menu {
+		width: 30px;
+		display: block;
+		/* показали полоски бургер */
+		width: 30px;
+		/* малюємо бургер полоски */
+		flex: 0 0 30px;
+		/* малюємо бургер полоски */
+		height: 18px;
+		/* малюємо бургер полоски */
+		position: relative;
+		z-index: 5;
+	}
+
+	/* ------------------------малюємо бургер полоски--------------------*/
+	.icon-menu::before,/* верхня полоска */
+	.icon-menu::after {/* нижня полоска */
+		content: "";
+		height: 2px;
+		width: 30px;
+		position: absolute;
+		left: 0;
+		background-color: #ffffff;;
+	}
+
+	.icon-menu::before {
+		top: 0;
+	}
+
+	.icon-menu::after {
+		bottom: 0;
+	}
+
+	.icon-menu span {
+		/* середня полоска */
+		content: "";
+		height: 2px;
+		width: 30px;
+		position: absolute;
+		left: 0;
+		background-color: #ffffff;;
+		top: 50%;
+		/* ставимо її по центру */
+		margin-top: -1px;
+		/* ставимо її по центру */
+		transition: all 0.3s;	/* буде зникати середня полоска ПЛАВНО*/
+	}
+
+	/* ------------------тепер КРУТИМО БУРГЕР------------------- */
+	.menu-open .icon-menu span {	/* коли меню відкрите */
+		transform: scale(0);		/* буде зникати середня полоска */
+	}
+	.menu-open .icon-menu::before	/* верхня полоска */{
+		transform: rotate(-45deg);
+		top: 50%;
+		margin-top: -1px;
+	}
+	.menu-open .icon-menu::after	 /* нижня полоска */{
+		transform: rotate(45deg);
+		bottom: 50%;
+		margin-bottom: -1px;
+	}
+
+}
+/* --------------------закончили рисовать бургер---------------------------- */
+
+
+
+@media (max-width:440px) {
+	.header___container {
+		gap: 5px;
+		/* зменшуеємо відстань */
+	}
+
+	.header__logo {
+		font-size: 24px;
+		/* зменшуємо logo text */
+	}
+	.button__header__item {
+		gap: 5px;
+		padding: 5px 24px 7px 21px;
+		font-size: 16px;
+	}
+}
