@@ -3,6 +3,7 @@
 /* ======Підключення вручну======= */
 /* Шрифт № 1 */
 @import "header.css";
+@import "animation.css";
 @font-face {
   font-family: "PFMonumentaPro";
   src: url("..//fonts/PFMonumentaPro.woff2") format("woff2"), url("..//fonts/PFMonumentaPro.woff") format("woff");
@@ -135,12 +136,12 @@ body {
 }
 @media (max-width: 76.875em) {
   .hero {
-    background-position: center 6.25rem left 3.125rem, 0 0;
+    background-position: center 6.25rem left 9.375rem, 0 0;
   }
 }
 @media (max-width: 62em) {
   .hero {
-    background-position: center 6.25rem left 0rem, 0 0;
+    background-position: center 6.25rem left 3.125rem, 0 0;
   }
 }
 @media (max-width: 50.9375em) {
@@ -182,6 +183,21 @@ body {
   color: #fbf0e6;
   padding: 1.25rem;
   justify-self: center;
+  -webkit-animation-name: blink-2;
+          animation-name: blink-2; /* приєднали сценарій */
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; /* затримка анімації */
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s; /* встановили час тривалості сценарію */
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear; /* плавність */
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
+  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 @media (max-width: 28.75em) {
   .hero__content h1 {
@@ -212,6 +228,21 @@ body {
 }
 .hero__img {
   max-width: 28.125rem;
+  -webkit-animation-name: blink-2;
+          animation-name: blink-2; /* приєднали сценарій */
+  -webkit-animation-delay: 0, 5s;
+          animation-delay: 0, 5s; /* затримка анімації */
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s; /* встановили час тривалості сценарію */
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear; /* плавність */
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
+  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 @media (max-width: 50.9375em) {
   .hero__img {
@@ -263,6 +294,21 @@ body {
 }
 .hero__scales {
   max-width: 28.125rem;
+  -webkit-animation-name: blink-2;
+          animation-name: blink-2; /* приєднали сценарій */
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s; /* затримка анімації */
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s; /* встановили час тривалості сценарію */
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear; /* плавність */
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
+  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 @media (max-width: 50.9375em) {
   .hero__scales {

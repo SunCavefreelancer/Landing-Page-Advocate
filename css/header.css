@@ -30,6 +30,16 @@
 	/* дістаємо наверх для адаптиву */
 	z-index: 5;
 	/* дістаємо наверх для адаптиву */
+/*/-------anime-----------*/
+	animation-name: text, blink-2; /* приєднали сценарій */
+	animation-delay: 1.5s; /* затримка анімації */
+	animation-duration: 2.5s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: backwards /* forwards у кінцевому положенні*/ /* backwards - у початковому положенні */;
+/*/-------anime-----------*/
 }
 
 .menu {
@@ -68,6 +78,16 @@
 	font-weight: 500;
 	font-size: 20px;
 	transition: color 0.3s;
+/*-------anime-----------*/
+			animation-name: blink-2; /* приєднали сценарій */
+			animation-delay: 1.9s; /* затримка анімації */
+			animation-duration: 2.5s; /* встановили час тривалості сценарію */
+			animation-timing-function: linear;/* плавність */
+			animation-iteration-count: 2;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+			animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+			/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+			animation-fill-mode: backwards /* forwards у кінцевому положенні*/ /* backwards - у початковому положенні */;
+/*-------anime-----------*/
 }
 
 .menu__link:hover {
@@ -151,7 +171,7 @@
 	/* ширина фона sub-menu */
 	border-radius: 15px;
 	padding: 15px;
-	background-color: rgba(34, 73, 64, 0.323); /* фон під саб меню */
+	background-color: rgba(32, 48, 76, 0.323); /* фон під саб меню */
 	color: #ffffff;
 	/* color фона sub-menu */
 }
@@ -220,7 +240,8 @@
 		/* буде виїзджати ЗВЕРХУ */
 		z-index: 3px;
 		padding: 80px 15px 30px 15px;
-		background-color: #f2c11b;
+		/* background-color: #113743; */
+		background-color: #051c29;
 		background-size: cover;
 
 
@@ -237,7 +258,8 @@
 		top: 100%;
 		right: 0;			/* буде виїзджати ЗВЕРХУ */
 		transition: top 0.3s;/* буде виїзджати ЗВЕРХУ */
-		background-color: #796f04;
+		/* background-color: #00293c; */
+		background-color: #030816;
 	}
 
 	.menu-open .menu__body,
@@ -262,6 +284,7 @@
 	/* пункти меню */
 	.menu__link {
 		font-size: 28px;
+		color: #ffffff;
 		/* збільшуємо відступи самі пункти меню */
 	}
 
@@ -294,7 +317,7 @@
 
 	.sub-menu__link {
 		font-size: 24px;
-		color: #FFF;
+		color: #ffffff;
 	}
 
 

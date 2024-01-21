@@ -16,6 +16,9 @@
 // Компоненти, сторінки
 @import "header.css";
 
+// Компоненти, сторінки
+@import "animation.css";
+
 
 
 
@@ -56,10 +59,10 @@ body {
 	background-repeat: no-repeat, no-repeat;
 	background-size:  toRem(600) toRem(600), cover;
 	@media(max-width: toEm(1230)) {
-		background-position: center toRem(100) left toRem(50), 0 0;
+		background-position: center toRem(100) left toRem(150), 0 0;
 	}
 	@media(max-width: toEm(992)) {
-		background-position: center toRem(100) left toRem(0), 0 0;
+		background-position: center toRem(100) left toRem(50), 0 0;
 	}
 	@media(max-width: toEm(815)) {
 		background: url(../img/Frame28.png) #1c1b1b;
@@ -121,10 +124,20 @@ body {
 			@media(max-width: toEm(340)) {
 				margin-bottom: toEm(25);
 			}
+	//-------anime-----------
+		animation-name: blink-2; /* приєднали сценарій */
+		animation-delay: 0.6s; /* затримка анімації */
+		animation-duration: 2.5s; /* встановили час тривалості сценарію */
+		animation-timing-function: linear;/* плавність */
+		animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+		animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+		/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+		animation-fill-mode: backwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+	//-------anime-----------
 		}
 	}
 
-	// .hero__img
+	// .hero__img (1)
 	&__img {
 		max-width: toRem(450); 	//задаем ширину обьекту-оболочке
 		@media(max-width: toEm(815)) {
@@ -139,6 +152,16 @@ body {
 			max-width: 100%;
 			aspect-ratio: 100 / 70;
 		}
+//-------anime-----------
+			animation-name: blink-2; /* приєднали сценарій */
+			animation-delay: 0,5s; /* затримка анімації */
+			animation-duration: 2.5s; /* встановили час тривалості сценарію */
+			animation-timing-function: linear;/* плавність */
+			animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+			animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+			/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+			animation-fill-mode: backwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//-------anime-----------
 	}
 	&__img img {
 		width: 100%;
@@ -163,13 +186,23 @@ body {
 		}
 	}
 
-	// .hero__scales
+	// .hero__scales (2)
 	&__scales {
 		max-width: toRem(450); 		//задаем ширину обьекту-оболочке
 		@media(max-width: toEm(815)) {
 			max-width: 100%;
 			aspect-ratio: 250 / 100;
 		}
+//-------anime-----------
+			animation-name: blink-2; /* приєднали сценарій */
+			animation-delay: 1.2s; /* затримка анімації */
+			animation-duration: 2.5s; /* встановили час тривалості сценарію */
+			animation-timing-function: linear;/* плавність */
+			animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+			animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+			/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+			animation-fill-mode: backwards /* forwards у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//-------anime-----------
 	}
 	&__scales img {
 		width: 100%;
