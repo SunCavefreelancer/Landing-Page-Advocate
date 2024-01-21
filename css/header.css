@@ -20,10 +20,9 @@
 
 .header__logo {
 	color: #ffffff;
-	font-family: 'CoreSansC-75ExtraBold';
+	font-family: 'PFMonumentaPro';
 	font-size: 30px;
-	font-style: italic;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1.26;
 	flex-shrink: 0;		/* щоб логотип не переносився на другий рядок при зменшенні екрану */
 	
@@ -44,7 +43,7 @@
 .menu__list {
 	display: flex;
 	/* ставимо меню ПО ЦЕНТРУ */
-	justify-content: center;
+	justify-content: flex-end;
 	/* ставимо меню ПО ЦЕНТРУ */
 	column-gap: 36px;
 	/* відступи між пунктами меню */
@@ -59,13 +58,14 @@
 	/* звертаємося одразу до 2х класів */
 	font-weight: 700;
 	text-decoration: underline;
-	color: #ffda8b;
+	color: #f4d694;
 }
 
 /* пункти меню */
 .menu__link {
 	color: #ffffff;
-	font-family: 'CoreSansC-55Medium';
+	font-family: 'PFMonumentaPro';
+	font-weight: 500;
 	font-size: 20px;
 	transition: color 0.3s;
 }
@@ -99,7 +99,7 @@
 		/* звертаємось  одразу до 2 тегів*/
 		content: '';
 		display: inline-block;
-		background-image: url(../img2/arrow.png);
+		background-image: url(../img/arrow_down_icon.png);
 		background-repeat: no-repeat;
 		background-position: center;
 		width: 16px;
@@ -219,10 +219,8 @@
 		transition: top 0.3s;
 		/* буде виїзджати ЗВЕРХУ */
 		z-index: 3px;
-		/*background-color: rgb(240, 252, 15);*/
 		padding: 80px 15px 30px 15px;
-		background: linear-gradient(45deg, rgba(255, 197, 8, 0.9), rgba(251, 255, 24, 0.9)), 
-		url(../img2/klipartz01.png) center right no-repeat;
+		background-color: #f2c11b;
 		background-size: cover;
 
 
@@ -239,7 +237,7 @@
 		top: 100%;
 		right: 0;			/* буде виїзджати ЗВЕРХУ */
 		transition: top 0.3s;/* буде виїзджати ЗВЕРХУ */
-		background-color: #ff6b15;
+		background-color: #796f04;
 	}
 
 	.menu-open .menu__body,

@@ -4,11 +4,12 @@
 /* ======Підключення вручну======= */
 /* Шрифт № 1 */
 @font-face {
-	font-family: 'Causten-Bold';
+	font-family: 'PFMonumentaPro';
 	src:
-		url("..//fonts/Causten-Bold.woff2") format("woff2"),
-		url("..//fonts/Causten-Bold.woff") format("woff");
-	wont-weight: 700;
+		url("..//fonts/PFMonumentaPro.woff2") format("woff2"),
+		url("..//fonts/PFMonumentaPro.woff") format("woff");
+	wont-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
+

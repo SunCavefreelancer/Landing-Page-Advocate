@@ -4,9 +4,9 @@
 /* Шрифт № 1 */
 @import "header.css";
 @font-face {
-  font-family: "Causten-Bold";
-  src: url("..//fonts/Causten-Bold.woff2") format("woff2"), url("..//fonts/Causten-Bold.woff") format("woff");
-  wont-weight: 700;
+  font-family: "PFMonumentaPro";
+  src: url("..//fonts/PFMonumentaPro.woff2") format("woff2"), url("..//fonts/PFMonumentaPro.woff") format("woff");
+  wont-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -120,40 +120,64 @@ body {
 }
 
 .hero {
-  background: url(../img/Frame28.png) #0e0d0d;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  padding: 10rem 0rem 1.25rem;
+  background: url(../img/Frame28.png) #1c1b1b;
+  background-position: top 11.25rem left 15.625rem, 0 0;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 37.5rem 37.5rem, cover;
+  padding: 0.5rem 0rem 0.078125rem;
   height: 100svh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-@media (max-width: 60em) {
+@media (max-width: 76.875em) {
   .hero {
-    padding: 6.25rem 0rem 1.25rem;
+    background-position: center 6.25rem left 3.125rem, 0 0;
   }
 }
-@media (max-width: 47.9375em) {
+@media (max-width: 62em) {
   .hero {
-    padding: 5rem 0rem 1.25rem;
+    background-position: center 6.25rem left 0rem, 0 0;
+  }
+}
+@media (max-width: 50.9375em) {
+  .hero {
+    background: url(../img/Frame28.png) #1c1b1b;
+    background-position: center left 15.625rem, 0 0;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 0rem 0rem, cover;
   }
 }
 .hero__container {
   display: grid;
+  width: 100%;
 }
 .hero__content {
-  max-width: 46.875rem;
-  padding: 0.625rem;
+  padding: 1.25rem;
   justify-self: end;
   -ms-flex-item-align: end;
       align-self: end;
-  border: 0.0625rem solid red;
 }
 .hero__content > *:last-child {
   margin-bottom: 0em;
 }
+@media (max-width: 50.9375em) {
+  .hero__content {
+    justify-self: center;
+  }
+}
+@media (max-width: 21.25em) {
+  .hero__content {
+    padding: 0rem;
+  }
+}
 .hero__content h1 {
   font-size: 3.125rem;
   text-transform: uppercase;
+  font-family: "PFMonumentaPro";
   text-align: center;
   color: #fbf0e6;
   padding: 1.25rem;
@@ -169,15 +193,43 @@ body {
     margin-bottom: 1.5625em;
   }
 }
+@media (max-width: 25.9375em) {
+  .hero__content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5625em;
+  }
+}
 @media (max-width: 23.4375em) {
   .hero__content h1 {
-    font-size: 2.8125rem;
     padding: 0.3125rem;
     margin-bottom: 2.5em;
   }
 }
+@media (max-width: 21.25em) {
+  .hero__content h1 {
+    margin-bottom: 1.5625em;
+  }
+}
 .hero__img {
   max-width: 28.125rem;
+}
+@media (max-width: 50.9375em) {
+  .hero__img {
+    max-width: 100%;
+    aspect-ratio: 200/70;
+  }
+}
+@media (max-width: 37.5em) {
+  .hero__img {
+    max-width: 100%;
+    aspect-ratio: 150/70;
+  }
+}
+@media (max-width: 37.5em) {
+  .hero__img {
+    max-width: 100%;
+    aspect-ratio: 100/70;
+  }
 }
 .hero__img img {
   width: 100%;
@@ -190,7 +242,6 @@ body {
 }
 @media (max-width: 28.125em) {
   .hero__img img {
-    height: 100%;
     aspect-ratio: 100/70;
   }
 }
@@ -201,7 +252,6 @@ body {
 }
 @media (max-width: 23.4375em) {
   .hero__img img {
-    height: 100%;
     aspect-ratio: 90/80;
     padding: 0.3125rem;
   }
@@ -214,6 +264,12 @@ body {
 .hero__scales {
   max-width: 28.125rem;
 }
+@media (max-width: 50.9375em) {
+  .hero__scales {
+    max-width: 100%;
+    aspect-ratio: 250/100;
+  }
+}
 .hero__scales img {
   width: 100%;
   height: 100%;
@@ -225,7 +281,7 @@ body {
 }
 @media (max-width: 37.75em) {
   .hero__scales img {
-    aspect-ratio: 250/100;
+    aspect-ratio: 350/100;
   }
 }
 @media (max-width: 23.4375em) {
