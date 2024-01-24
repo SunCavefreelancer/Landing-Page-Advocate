@@ -27,6 +27,7 @@ body {
 	$colorBody: #0e0d0d;
 	$backgroundBody: #fbf0e6;
 	font-size: toRem(16);
+	$colorP: #fcf9f9;
 }
 
 
@@ -54,22 +55,24 @@ body {
 
 //SCSS основні стилі 
 .hero {
-	background: url(../img/Frame28.png) #1c1b1b;
-	background-position: top toRem(180) left toRem(250), 0 0;
+	background: url(../img/2.webp) #1c1b1b;
+	background-position: top toRem(150) left toRem(350), 0 0;
 	background-repeat: no-repeat, no-repeat;
-	background-size:  toRem(600) toRem(600), cover;
-	@media(max-width: toEm(1230)) {
-		background-position: center toRem(100) left toRem(150), 0 0;
+	background-size:  toRem(500) toRem(800), cover;
+
+	@media(max-width: toEm(1860)) {
+		background: url(../img/2.webp) #1c1b1b;
+		background-position: top toRem(150) left toRem(300), 0 0;
+		background-repeat: no-repeat, no-repeat;
+		background-size:  toRem(380) toRem(550), cover;
 	}
-	@media(max-width: toEm(992)) {
-		background-position: center toRem(100) left toRem(50), 0 0;
-	}
-	@media(max-width: toEm(815)) {
-		background: url(../img/Frame28.png) #1c1b1b;
+	@media(max-width: toEm(1100)) {
+		background: url(../img/2.webp) #1c1b1b;
 		background-position: center left toRem(250), 0 0;
 		background-repeat: no-repeat, no-repeat;
 		background-size:  toRem(0) toRem(0), cover;
 	}
+	//mask-image: radial-gradient(#000, transparent);  /* круговой градиент из центра от непрозрачного к прозрачному */
 
 	padding: toRem(8) toRem(0) toRem(1.25);
 	height: 100svh;
@@ -88,7 +91,7 @@ body {
 		& > *:last-child {
 			margin-bottom: toEm(0);
 		}
-		@media(max-width: toEm(815)) {
+		@media(max-width: toEm(1100)) {
 			justify-self: center;	 // пишемо 'ДЛЯ ВИРІВНЮВАННЯ КОНТЕНТУ' у картці право-центр-ліво
 		}
 		@media(max-width: toEm(340)) {
@@ -217,6 +220,830 @@ body {
 		}
 		@media(max-width: toEm(375)) {
 			padding: toRem(5);
+		}
+	}
+}
+
+
+//--------------------------about--------------------
+.about {
+	padding: toRem(80) toRem(0) toRem(80);
+	background-image: url(../img/20.webp);
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	flex-direction: column;
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+	@media(max-width: toEm(540)) {
+		padding: toRem(25) toRem(0);
+	}
+	@media(max-width: toEm(400)) {
+		padding: toRem(15) toRem(0) toRem(25);
+	}
+
+	// .about__container
+	&__container {
+		max-width: toRem(900);
+		background-color: #fbf0e638;
+		padding: toRem(50);
+//---------javaScript----animation---------
+		transform: translate(0px, 30px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 0.8s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+//---------javaScript----animation---------
+		@media(max-width: toEm(540)) {
+			padding: toRem(20);
+		}
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+		& h2 {
+			font-family: 'PFMonumentaPro';
+			font-size: toRem(25);
+			margin-bottom: toEm(40, 25);
+			line-height: 135%;
+			text-align: center;
+			@media(max-width: toEm(450)) {
+				margin-bottom: toEm(20, 20);
+			}
+		}
+		& p {
+			font-size: toRem(20);
+			margin-bottom: toEm(20);
+			text-align: center;
+			margin-bottom: toEm(15);
+			line-height: 135%;
+			text-align: center;
+		}
+	}
+
+	// .about__text
+	&__text {
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+		font-size: toRem(20);
+		margin-bottom: toEm(30);
+	}
+	& p {
+		margin-bottom: toEm(15);
+		line-height: 135%;
+		text-align: center;
+	}
+	& span {
+		 text-decoration: underline;
+		 font-weight: 600;
+	}
+}
+
+
+
+//-----------------------------------------------------------
+.team {
+	background-color: #0e0d0d;
+	padding: toRem(80) toRem(0);
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+
+	// .team__container
+	&__container {
+		& h3 {
+			text-align: center;
+			font-family: 'PFMonumentaPro';
+			font-size: toRem(35);
+			margin-bottom: toEm(50, 35);
+			line-height: 135%;
+			color: #f4d694;
+			font-weight: 700;
+			line-height: 135%;
+			text-shadow: toRem(1) toRem(1) 0 rgba(0, 0, 0, 1),
+			toRem(-1) toRem(-1) toRem(0) rgba(255, 220, 0, 1);
+			@media(max-width: toEm(450)) {
+				font-size: toRem(25);
+			}
+			@media(max-width: toEm(410)) {
+				margin-bottom: toEm(30, 25);
+			}
+		}
+	}
+	// .team__cards
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: toRem(20);
+		@media(max-width: toEm(992)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media(max-width: toEm(700)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// .team__item
+	&__item {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		position: relative;		//позіціонуємо плашку при наведені на картку
+		overflow: hidden;
+		
+		padding: toRem(30) toRem(30) toRem(0);
+		border-radius: toRem(50);
+		border: toRem(5) solid rgba(180, 157, 10, 0.67);
+
+		background: url(../img/13.webp), url(../img/53.webp), #fbf0e6;		//офн для карточки
+		background-repeat: no-repeat;
+		background-position: 0 0, 150% 100%;
+		background-size: toRem(350) toRem(350), toRem(450) toRem(350);
+//---------javaScript----animation---------
+		transform: translate(0px, 30px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 0.8s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+//---------javaScript----animation---------
+		@media(max-width: toEm(370)) {
+			padding: toRem(15) toRem(15) toRem(0);
+		}
+
+		&::before {					// створили плашку при наведені на картку
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: #c8c8c881;
+			//transform: translate(0px, 0px);   // так тоже класно виходить 
+			transform: translate(0, -100%); 
+			transition: 0.7s;
+			opacity: 0.5;
+			z-index: 1;
+			
+		}
+		&:hover::before {
+			// transform: translate(-100%, 0px); // так тоже класно виходить 
+			transform: translate(toRem(0), toRem(0)); 
+		}
+}
+	
+
+	//__right
+	&__right {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		display: flex;
+		justify-content: space-between;
+		@media(max-width: toEm(992)) {
+		  flex-wrap: wrap;
+		  justify-content: center;
+		  align-items: center;
+		}
+	}
+
+	//__text 
+	&__text {
+		flex: 0 1 50%;
+		@media(max-width: toEm(992)) {
+			flex: 0 1 30%;
+		}
+	}
+
+	// .team__title
+	&__title {
+		padding: toRem(15);
+		color: #0e0d0d;
+		text-align: center;
+		font-size: toRem(25);
+		font-family: 'PFMonumentaPro';
+		font-weight: 800;
+		line-height: 135%;
+		letter-spacing: toRem(1.5);
+		@media(max-width: toEm(600)) {
+			font-size: toRem(20);
+		}
+		@media(max-width: toEm(350)) {
+			font-size: toRem(18);
+		}
+	}
+
+	// .team__foto
+	&__foto {
+		flex: 0 1 50%;
+		@media(max-width: toEm(992)) {
+			flex: 0 1 70%;
+		}
+	}
+	&__foto img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 70 / 50;
+		object-fit: contain;
+		@media(max-width: toEm(992)) {
+			aspect-ratio: 250 / 200;
+		}
+		@media(max-width: toEm(450)) {
+			aspect-ratio: 200 / 200;
+		}
+	}
+
+	// .team__name
+	&__name {
+		color: #0e0d0d;
+		text-align: center;
+		font-size: toRem(25);
+		margin-bottom: toEm(30, 25);
+		font-family: 'Inter';
+		font-weight: 700;
+		line-height: 130%;
+		@media(max-width: toEm(430)) {
+			margin-bottom: toEm(15, 20);
+		}
+	}
+
+	//__icons
+	&__icons {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: toRem(10);
+		text-align: center;
+		@media(max-width: toEm(992)) {
+			grid-template-columns: repeat(4, 1fr);
+			text-align: center;
+		}
+		@media(max-width: toEm(808)) {
+			grid-template-columns: repeat(3, 1fr);
+			text-align: center;
+		}
+		@media(max-width: toEm(767.98)) {
+			grid-template-columns: repeat(4, 1fr);
+			text-align: center;
+		}
+		@media(max-width: toEm(700)) {
+			grid-template-columns: repeat(4, 1fr);
+			text-align: center;
+		}
+	}
+	// .team__icon
+	&__icon {
+		padding: toRem(5);	
+		@media(max-width: toEm(992)) {
+			padding: toRem(10);	
+		}
+		@media(max-width: toEm(450)) {
+			padding: toRem(5);	
+		}
+	}
+	&__icon img {
+		width: toRem(60);
+		height: toRem(60);
+		aspect-ratio: 250 / 30;
+		object-fit: contain;
+		@media(max-width: toEm(882)) {
+			width: toRem(50);
+			height: toRem(50);
+		}
+		@media(max-width: toEm(700)) {
+			width: toRem(60);
+			height: toRem(60);
+		}
+		@media(max-width: toEm(430)) {
+			width: toRem(40);
+			height: toRem(40);
+		}
+	}
+	//__cod 
+	&__cod {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		font-size: toRem(30);
+		font-family: 'PFMonumentaPro';
+		font-weight: 700;
+		padding: toRem(50);
+		z-index: 2;
+		line-height: 130%;
+		text-align: center;
+		visibility: hidden;			//ховаємо елементtr
+	}
+		&__item:hover &__cod {
+			visibility: visible;	//показали елемент
+			background-color: rgb(232, 182, 17);
+			opacity: 1;
+			transition: 0.7s;
+		}
+	
+}
+
+
+
+//------------------------servises-------------------------
+.servises {
+	padding: toRem(80) toRem(0);
+	background-image: url(../img/012.webp);
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: contain;
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+	// .servises__container
+	&__container {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		& h2 {
+			font-family: 'PFMonumentaPro';
+			font-weight: 500;
+			font-size: toRem(25);
+			margin-bottom: toEm(40, 25);
+			line-height: 135%;
+			@media(max-width: toEm(450)) {
+				margin-bottom: toEm(20, 20);
+				text-align: center;
+			}
+		}
+	}
+
+	// .servises__text
+	&__text {
+		max-width: toRem(900);
+		background-color: #e4e4e338;;
+		padding: toRem(20);
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		& p {
+			font-size: toRem(20);
+			margin-bottom: toEm(15, 20);
+			line-height: 135%;
+			font-family: 'Inter';
+			font-weight: 600;
+			@media(max-width: toEm(450)) {
+				font-size: toRem(18);
+			}
+			display: flex;
+			gap: toRem(10);
+			&::before {
+				content: "";
+				display: inline-block;
+				width: toRem(6);
+				height: toRem(12);
+				flex: 0 0 toRem(6);
+				background-color: #f4d694;
+				transform: translateY(toRem(8));
+				border-radius: toRem(10);
+				transition: 0.4s;
+				border: toRem(1) solid transparent;
+			}
+				&:hover::before {
+					background-color: #1c1b1b;
+					border: toRem(1) solid #f4d694;
+				}
+			
+		}
+	}
+}
+
+
+
+//-----------------------------------------------------------------
+.questions {
+	padding: toRem(60) toRem(0);
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+		// .questions__container
+		&__container {
+			& > *:last-child{
+				margin-bottom: toEm(0);
+			}
+			& h2 {
+				font-family: 'PFMonumentaPro';
+				font-weight: 500;
+				font-size: toRem(25);
+				margin-bottom: toEm(40, 25);
+				line-height: 135%;
+				@media(max-width: toEm(455)) {
+					margin-bottom: toEm(20, 18);
+					text-align: center;
+				}
+			}
+		}
+
+		// .questions__spoiler
+		&__spoiler {
+			display: flex;
+			margin-bottom: toEm(20);
+//---------javaScript----animation---------
+		transform: translate(60px, 60px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 0.8s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+//---------javaScript----animation---------
+		}
+
+		// .questions__text
+		&__text {
+			padding: toRem(10) toRem(15);
+			& > *:last-child{
+				margin-bottom: toEm(0);
+			}
+			& p {
+				font-family: 'Inter';
+				font-size: toRem(20);
+				margin-bottom: toEm(15, 25);
+				line-height: 135%;
+				
+//----------------anime-----------------
+	animation-name: transform; /* приєднали сценарій */
+	animation-delay: 0,5s; /* затримка анімації */
+	animation-duration: 3s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime-----------------
+				@media(max-width: toEm(450)) {
+					margin-bottom: toEm(15, 16);
+					text-align: left;
+				}
+			}
+		}
+		&__title {
+			font-family: 'Inter';
+			font-weight: 500;
+			font-size: toRem(25);
+			margin-bottom: toEm(15, 25);
+			line-height: 135%;
+			@media(max-width: toEm(455)) {
+				font-size: toRem(20);
+
+				text-align: left;
+			}
+			display: flex;
+			gap: toRem(15);
+			&::before {
+				content: "";
+				display: inline-block;
+				background-image: url(../icon/08.webp);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				width: toRem(30);
+				height: toRem(30);
+				flex: 0 0 toRem(30);
+				transform: translateY(toRem(5));
+
+//----------------anime-----------------
+	animation-name: scale; /* приєднали сценарій */
+	animation-delay: 0,5s; /* затримка анімації */
+	animation-duration: 3s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime-----------------
+			}
+			&--2::before {
+				content: "";
+				display: inline-block;
+				background-image: url(../icon/09.webp);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: contain;
+				width: toRem(30);
+				height: toRem(30);
+				flex: 0 0 toRem(30);
+				transform: translateY(toRem(2));
+				
+//----------------anime-----------------
+	animation-name: scale; /* приєднали сценарій */
+	animation-delay: 1s; /* затримка анімації */
+	animation-duration: 3s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime-----------------
+			}
+			&--3::before {
+				content: "";
+				display: inline-block;
+				background-image: url(../icon/10.webp);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: contain;
+				width: toRem(30);
+				height: toRem(30);
+				flex: 0 0 toRem(30);
+				transform: translateY(toRem(2));
+								
+//----------------anime-----------------
+	animation-name: scale; /* приєднали сценарій */
+	animation-delay: 1.5s; /* затримка анімації */
+	animation-duration: 3s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime-----------------
+			}
+			&--4::before {
+				content: "";
+				display: inline-block;
+				background-image: url(../icon/11.webp);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: contain;
+				width: toRem(30);
+				height: toRem(30);
+				flex: 0 0 toRem(30);
+				transform: translateY(toRem(2));
+								
+//----------------anime-----------------
+	animation-name: scale; /* приєднали сценарій */
+	animation-delay: 2s; /* затримка анімації */
+	animation-duration: 3s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime-----------------
+			}
+			&--5::before {
+				content: "";
+				display: inline-block;
+				background-image: url(../icon/12.webp);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: contain;
+				width: toRem(30);
+				height: toRem(30);
+				flex: 0 0 toRem(30);
+				transform: translateY(toRem(2));
+			}
+		}
+}
+
+
+//--------------------------advantages----------------------------
+.advantages {
+	padding: toRem(80) toRem(0);
+	background-image: url(../img/fon.webp);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-size: contain;
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+	// .advantages__container
+	&__container {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		& h2 {
+			font-family: 'PFMonumentaPro';
+			font-weight: 500;
+			font-size: toRem(25);
+			margin-bottom: toEm(40, 25);
+			line-height: 135%;
+			color: #fbf0e6;
+			@media(max-width: toEm(455)) {
+				margin-bottom: toEm(20, 18);
+				text-align: center;
+			}
+		}
+	}
+
+	// .advantages__cards
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: toRem(20);
+		@media(max-width: toEm(992)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media(max-width: toEm(767.98)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// .advantages__item
+	&__item {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		display: flex;
+		flex-direction: column;
+		row-gap: toRem(24);
+		padding: toRem(48);
+		height: 100%;
+		border-radius: toRem(16);
+		background-color: rgba(19, 19, 19, 0.554);
+		border: 1px solid #000;
+
+//---------javaScript----animation---------
+		transform: translate(0px, 50px);
+		opacity: 0;
+		visibility: hidden;
+
+		&.show {
+			transition: all 0.8s;
+			transform: translate(0px, 0px);
+			opacity: 1;
+			visibility: visible;
+		}
+//---------javaScript----animation---------
+
+		@media(max-width: toEm(992)) {
+			padding: toRem(35);
+			text-align: center;
+		}
+		@media(max-width: toEm(767.98)) {
+			padding: toRem(20);
+			text-align: center;
+		}
+	}
+
+
+	// .advantages__img
+	&__img {
+		max-width: toRem(80);
+		max-height: toRem(80);
+		margin-bottom: toEm(30);
+		align-self: center;
+		
+	}
+	
+	&__img img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 80 / 80;
+		object-fit: contain;
+		filter: brightness(0) invert(1);		//была черная - стала иконка белая
+	}
+
+	//__text {
+	&__text {
+		color: #fbf0e6;
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		}
+	// .advantages__name
+	&__name {
+		font-size: toRem(20);
+		margin-bottom: toEm(8, 20);
+	}
+
+	// .advantages__sub-title
+	&__sub-title {
+		font-size: toRem(16);
+		margin-bottom: toEm(8, 16);
+		line-height: 135%;
+	}
+}
+
+
+
+
+
+
+
+//---------------------------freeedom---------------------
+.freedom {
+	padding: toRem(60) toRem(0);
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+		// .questions__container
+		&__container {
+			& > *:last-child{
+				margin-bottom: toEm(0);
+			}
+			& h2 {
+				font-family: 'PFMonumentaPro';
+				font-weight: 500;
+				font-size: toRem(25);
+				margin-bottom: toEm(40, 25);
+				line-height: 135%;
+				text-align: center;
+				@media(max-width: toEm(455)) {
+					margin-bottom: toEm(20, 18);
+				}
+			}
+		}
+
+	// .freedom__img
+	&__img  {
+		margin-bottom: toEm(30);
+//---------javaScript----animation---------
+		transform: translate(60px, 60px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 1.3s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+//---------javaScript----animation---------
+	}
+	&__img img {
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 650 / 400;
+	}
+
+	// .freedom__title
+	&__title {
+		font-size: toRem(20);
+		margin-bottom: toEm(15, 20);
+		line-height: 135%;
+		font-family: 'Inter';
+		font-weight: 600;
+		text-align: center;
+//---------javaScript----animation---------
+		transform: translate(0px, 40px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 0.8s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+//---------javaScript----animation---------
+		@media(max-width: toEm(450)) {
+			font-size: toRem(18);
+		}
+	}
+
+	// .freedom__sub-title
+	&__sub-title {
+		font-size: toRem(20);
+		margin-bottom: toEm(15, 20);
+		line-height: 135%;
+		font-family: 'Inter';
+		font-weight: 600;
+		text-align: center;
+//---------javaScript----animation---------
+		transform: translate(0px, 50px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 0.8s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+				animation-delay: 1s; /* затримка анімації */
+			}
+//---------javaScript----animation---------
+		@media(max-width: toEm(450)) {
+			font-size: toRem(18);
 		}
 	}
 }

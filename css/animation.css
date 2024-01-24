@@ -3,10 +3,10 @@
 /* анімація 1 */
 @keyframes transform { /* створили сценарій */
 	0% {
-		transform: translate(20px);
+		transform: translate(-20px);
 	}
 	100% {
-		transform: translate(520px);
+		transform: translate(20px);
 	}
 }
 
@@ -16,119 +16,13 @@
 	0% {
 		transform: scale(0);
 	}
-	100% {
-		transform: scale(4.5);
+	50% {
+		transform: scale(1.2);
 	}
-}
-
-/* анімація 3 ---тут застосований один сценарій---*/
-
-@keyframes scaleAndTranslateX { /* створили сценарій ЛУНА*/
-	0% {
+	100% {
 		transform: scale(0);
 	}
-	50% {
-		transform: scale(10);
-	  }
-	100% {
-		transform: translateX(1920px) /* луна сховається за межі екрану 1920рх  */ scale(14)/* лунеа збільшиться до 14 одиниць */;
-	}
 }
-
-
-
-/* // ---------------------ANIMATIONS--4-------------------- */
-@keyframes text { /* створили сценарій */
-	0% {
-		opacity: 0;
-		transform: translate(0px 10%) rotate(10deg);
-	}
-	100% {
-		opacity: 1;
-		transform: translate(0px 0) rotate(-20deg);
-	}
-}
-
-
-/* //-------------------------------------------------------------5 */
-@keyframes rotate {
-	0% {
-	  transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
-	}
-	5% {
-	  transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
-	}
-	20% {
-	  transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
-	}
-	25% {
-	  transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
-	}
-	60% {
-	  transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
-	}
-	65% {
-	  transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
-	}
-	80% {
-	  transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
-	}
-	85% {
-	  transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
-	}
-	87% {
-	  transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
-	}
-	100% {
-	  transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
-	}
-  }
-
-
-/*   //---------------------------анимация в плоскости-------------------------------6 */
-  @keyframes shadow {
-	0% {
-	  transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
-	  box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
-	}
-	5% {
-	  transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
-	  box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
-	}
-	20% {
-	  transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
-	  box-shadow: 0 0 50px 30px rgba(0,0,0,0.3);
-	}
-	25% {
-	  transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
-	  box-shadow: 0 0 35px 15px rgba(0,0,0,0.1);
-	}
-	60% {
-	  transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
-	  box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
-	}
-	100% {
-	  box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
-	}
-  }
-
-/*   //--------------------анимация wawes---------------------------7 */
-  @keyframes waves {
-	0% {
-	  transform: scale(1);
-	  opacity: 1;
-	}
-  
-	50% {
-	  opacity: 1;
-	}
-  
-	100% {
-	  transform: scale(2);
-	  opacity: 0;
-	}
-  }
-
 
 /* ---------для блока .box------анимация------ */
 .box__image {
@@ -136,7 +30,7 @@
 	height: 50px;/* щоб задати ширину та висоту блоку */
 	position: relative; /* для анімації */
 
-	animation-name: scaleAndTranslateX; /* приєднали сценарій */
+	animation-name: blink-2; /* приєднали сценарій */
 	animation-delay: 0,5s; /* затримка анімації */
 	animation-duration: 15s; /* встановили час тривалості сценарію */
 	animation-timing-function: linear;/* плавність */
@@ -171,3 +65,25 @@
 	}
   }
   
+
+/*------------------------------------------------------*/
+@-webkit-keyframes scale-up-center {
+	0% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	}
+	100% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	}
+  }
+  @keyframes scale-up-center {
+	0% {
+	  -webkit-transform: scale(0.5);
+			  transform: scale(0.5);
+	}
+	100% {
+	  -webkit-transform: scale(1);
+			  transform: scale(1);
+	}
+  }
