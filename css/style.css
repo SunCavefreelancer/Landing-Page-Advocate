@@ -487,23 +487,9 @@ body {
   background-repeat: no-repeat;
   background-position: 0 0, 150% 100%;
   background-size: 21.875rem 21.875rem, 28.125rem 21.875rem;
-  -webkit-transform: translate(0px, 30px);
-      -ms-transform: translate(0px, 30px);
-          transform: translate(0px, 30px);
-  opacity: 0;
-  visibility: hidden;
 }
 .team__item > *:last-child {
   margin-bottom: 0em;
-}
-.team__item.show {
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
-  -webkit-transform: translate(0px, 0px);
-      -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-  opacity: 1;
-  visibility: visible;
 }
 @media (max-width: 23.125em) {
   .team__item {

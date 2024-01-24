@@ -368,17 +368,6 @@ body {
 		background-repeat: no-repeat;
 		background-position: 0 0, 150% 100%;
 		background-size: toRem(350) toRem(350), toRem(450) toRem(350);
-//---------javaScript----animation---------
-		transform: translate(0px, 30px);
-		opacity: 0;
-		visibility: hidden;
-			&.show {
-				transition: all 0.8s;
-				transform: translate(0px, 0px);
-				opacity: 1;
-				visibility: visible;
-			}
-//---------javaScript----animation---------
 		@media(max-width: toEm(370)) {
 			padding: toRem(15) toRem(15) toRem(0);
 		}
