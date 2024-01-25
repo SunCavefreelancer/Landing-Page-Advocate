@@ -254,7 +254,7 @@ body {
 		opacity: 0;
 		visibility: hidden;
 			&.show {
-				transition: all 0.8s;
+				transition: all 0.6s;
 				transform: translate(0px, 0px);
 				opacity: 1;
 				visibility: visible;
@@ -628,6 +628,12 @@ body {
 	@media(max-width: toEm(767.98)) {
 		padding: toRem(30) toRem(0);
 	}
+	//__body {
+		&__body {
+			& > *:last-child{
+				margin-bottom: toEm(0);
+			}
+		}
 		// .questions__container
 		&__container {
 			& > *:last-child{
@@ -646,173 +652,131 @@ body {
 			}
 		}
 
+//----------------------------------spoiler------------------------------
 		// .questions__spoiler
 		&__spoiler {
 			display: flex;
-			margin-bottom: toEm(20);
-//---------javaScript----animation---------
+			flex-direction: column;
+			justify-content: flex-start;			//кнопка слева теперь
+			align-items: flex-start;				//кнопка слева теперь
+			margin-bottom: toRem(20);
+			& > *:last-child{
+				margin-bottom: toEm(0);
+			}
+
+//---------javaScript-----------------------animation---------
 		transform: translate(60px, 60px);
 		opacity: 0;
 		visibility: hidden;
 			&.show {
-				transition: all 0.8s;
+				transition: all 0.6s;
 				transform: translate(0px, 0px);
 				opacity: 1;
 				visibility: visible;
 			}
-//---------javaScript----animation---------
+//---------javaScript-----------------------animation---------
 		}
 
-		// .questions__text
-		&__text {
-			padding: toRem(10) toRem(15);
-			& > *:last-child{
-				margin-bottom: toEm(0);
-			}
-			& p {
-				font-family: 'Inter';
-				font-size: toRem(20);
-				margin-bottom: toEm(15, 25);
-				line-height: 135%;
-				
-//----------------anime-----------------
-	animation-name: transform; /* приєднали сценарій */
-	animation-delay: 0,5s; /* затримка анімації */
-	animation-duration: 3s; /* встановили час тривалості сценарію */
-	animation-timing-function: linear;/* плавність */
-	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
-	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
-	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
-	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
-//----------------anime-----------------
-				@media(max-width: toEm(450)) {
-					margin-bottom: toEm(15, 16);
-					text-align: left;
+		&__title {		//------------текст----------------
+			font-family: 'Inter';
+			font-size: toRem(18);
+			margin-bottom: toEm(15, 18);
+			line-height: 135%;
+			display: none;					//для текста под кнопкой
+				&.open {
+					display: block;			//для текста под кнопкой
 				}
 			}
-		}
-		&__title {
-			font-family: 'Inter';
-			font-weight: 500;
-			font-size: toRem(25);
-			margin-bottom: toEm(15, 25);
-			line-height: 135%;
-			@media(max-width: toEm(455)) {
-				font-size: toRem(20);
 
-				text-align: left;
-			}
-			display: flex;
-			gap: toRem(15);
-			&::before {
-				content: "";
-				display: inline-block;
-				background-image: url(../icon/08.webp);
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-size: contain;
-				width: toRem(30);
-				height: toRem(30);
-				flex: 0 0 toRem(30);
-				transform: translateY(toRem(5));
+//__toggle ----------(button)-----------------кнопка------------(-js-)---------------------
+			&__toggle {
+				display: flex;				//---------------для horizont-line---------burger-----------------
+				justify-content: space-between;	//---------------для horizont-line---------burger-----------------
+				align-items: center;		//---------------для horizont-line---------burger-----------------
+				column-gap: toRem(20);
+				@media(max-width: toEm(500)) {
+					text-align: left;
+				}
 
-//----------------anime-----------------
-	animation-name: scale; /* приєднали сценарій */
-	animation-delay: 0,5s; /* затримка анімації */
-	animation-duration: 3s; /* встановили час тривалості сценарію */
-	animation-timing-function: linear;/* плавність */
-	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
-	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
-	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
-	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
-//----------------anime-----------------
+				background-color: #0e0e0d;
+				color: #fbf0e6;
+				font-size: toRem(18);
+				padding: toRem(15);
+				line-height: 135%;
+				border: toRem(1) solid transparent;
+				margin-bottom: toEm(20);
+				transition: 0.5s;
+				&:hover {
+					background-color: #d5ae00;
+					border: toRem(1) solid #0e0d0d;
+					color: #0e0d0d;
+				}
 			}
-			&--2::before {
-				content: "";
-				display: inline-block;
-				background-image: url(../icon/09.webp);
-				background-repeat: no-repeat;
-				background-position: 0 0;
-				background-size: contain;
-				width: toRem(30);
-				height: toRem(30);
-				flex: 0 0 toRem(30);
-				transform: translateY(toRem(2));
-				
-//----------------anime-----------------
-	animation-name: scale; /* приєднали сценарій */
-	animation-delay: 1s; /* затримка анімації */
-	animation-duration: 3s; /* встановили час тривалості сценарію */
-	animation-timing-function: linear;/* плавність */
-	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
-	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
-	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
-	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
-//----------------anime-----------------
-			}
-			&--3::before {
-				content: "";
-				display: inline-block;
-				background-image: url(../icon/10.webp);
-				background-repeat: no-repeat;
-				background-position: 0 0;
-				background-size: contain;
-				width: toRem(30);
-				height: toRem(30);
-				flex: 0 0 toRem(30);
-				transform: translateY(toRem(2));
-								
-//----------------anime-----------------
-	animation-name: scale; /* приєднали сценарій */
-	animation-delay: 1.5s; /* затримка анімації */
-	animation-duration: 3s; /* встановили час тривалості сценарію */
-	animation-timing-function: linear;/* плавність */
-	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
-	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
-	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
-	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
-//----------------anime-----------------
-			}
-			&--4::before {
-				content: "";
-				display: inline-block;
-				background-image: url(../icon/11.webp);
-				background-repeat: no-repeat;
-				background-position: 0 0;
-				background-size: contain;
-				width: toRem(30);
-				height: toRem(30);
-				flex: 0 0 toRem(30);
-				transform: translateY(toRem(2));
-								
-//----------------anime-----------------
-	animation-name: scale; /* приєднали сценарій */
-	animation-delay: 2s; /* затримка анімації */
-	animation-duration: 3s; /* встановили час тривалості сценарію */
-	animation-timing-function: linear;/* плавність */
-	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
-	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
-	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
-	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
-//----------------anime-----------------
-			}
-			&--5::before {
-				content: "";
-				display: inline-block;
-				background-image: url(../icon/12.webp);
-				background-repeat: no-repeat;
-				background-position: 0 0;
-				background-size: contain;
-				width: toRem(30);
-				height: toRem(30);
-				flex: 0 0 toRem(30);
-				transform: translateY(toRem(2));
-			}
-		}
+//----------------------------------spoiler------------------------------
+
+
+//----------------------------------horizont-line---------burger------------------------------
+.horizont-line{
+	display: flex;				//---------------для horizont-line---------burger-----------------
+	justify-content: center;	//---------------для horizont-line---------burger-----------------
+	align-items: center;		//---------------для horizont-line---------burger-----------------
+	text-align: center;
+	
+	display: block;
+	width: 30px;
+	flex: 0 0 30px;
+	height: 18px;
+	position: relative;
+	z-index: 5;
+  
+	&::before, &::after {
+	  content: "";
+	  height: 18px;
+	  width: 2px;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  transform: rotate(90deg);
+	  background-color: #ffffff;
+	  margin-top: -1px;
+	transition: all 0.3s;
+	}
+  
+	&::before {
+	  top: 0;
+	}
+  
+	&::after {
+	  top: rotate(45deg);
+	  transform: rotate(0deg);
+	}
+  
+  .line-open & {
+	&::before, &::after {
+	  transform: rotate(0deg);
+	  top: 0;
+	  background-color: blue;
+	}
+  
+	&::before {
+	  transform: rotate(45deg);
+	  margin-bottom: -1px;
+	}
+  
+	&::after {
+	  transform: rotate(-225deg);
+	  margin-bottom: -1px;
+	}
+	}
+  }
 }
+  //----------------------------------horizont-line---------burger------------------------------
 
 
-//--------------------------advantages----------------------------
+
+
+
+//-------------------------------------advantages--------------------------------------------------
 .advantages {
 	padding: toRem(80) toRem(0);
 	background-image: url(../img/fon.webp);
@@ -877,7 +841,7 @@ body {
 		visibility: hidden;
 
 		&.show {
-			transition: all 0.8s;
+			transition: all 0.7s;
 			transform: translate(0px, 0px);
 			opacity: 1;
 			visibility: visible;
@@ -939,7 +903,7 @@ body {
 
 
 
-//---------------------------freeedom---------------------
+//--------------------------------------------------freeedom------------------------------------------
 .freedom {
 	padding: toRem(60) toRem(0);
 	@media(max-width: toEm(992)) {
@@ -974,7 +938,7 @@ body {
 		opacity: 0;
 		visibility: hidden;
 			&.show {
-				transition: all 1.3s;
+				transition: all 0.7s;
 				transform: translate(0px, 0px);
 				opacity: 1;
 				visibility: visible;

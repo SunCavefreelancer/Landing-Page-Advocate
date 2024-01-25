@@ -2,7 +2,7 @@
 "use strict"
 
 
-/*---class = .advantages__item-----------кнопка-------------javascript---------------------*/
+/*---class = .advantages__item-----------кнопка-------------javascript-----------анимация по старнице----------*/
 let options = {
 	root: null,
 	rootMargin: "0px 0px 0px 0px",
@@ -31,4 +31,42 @@ let someElements = document.querySelectorAll("[class*='--anim']");
 someElements.forEach(someElement => {
 	observer.observe(someElement);
 });
-/*---class = .advantages__item-----------кнопка-------------javascript---------------------*/
+/*---class = .advantages__item-----------кнопка-------------javascript-----------анимация по старнице----------*/
+
+
+
+
+
+
+
+/* ------------------------------------spoiler---------------------------------------- */
+window.onload = function() {
+	var spoilers = document.getElementsByClassName('questions__toggle');
+	for(var i=0; i<spoilers.length; ++i){
+	  spoilers[i].addEventListener("click", function () {
+		var contentEl = this.parentElement.querySelector('.questions__title');
+		var isOpen = contentEl.classList.contains('open');
+		contentEl.classList[isOpen ? 'remove' : 'add']('open');
+		contentEl.setAttribute('aria-hidden', !isOpen);
+		this.setAttribute('aria-expanded', isOpen);
+	  });
+
+	  spoilers[i].addEventListener("keydown", function (e) {
+		if (e.keyCode === 13 || e.keyCode === 32) { // 13 is Enter, 32 is Space
+		  e.preventDefault();
+		  this.click();
+		  return false;
+		}
+	  });
+	}
+  };
+  /* ------------------------------------spoiler---------------------------------------- */
+
+
+
+//----------------------------------horizont-line---------burger------------------------------
+	const icon = document.querySelector('.horizont-line');		//---------------(если для одного бургера то будет работать)--------------
+icon.addEventListener('click', function () {
+	document.documentElement.classList.toggle('line-open');
+});
+//----------------------------------horizont-line---------burger------------------------------

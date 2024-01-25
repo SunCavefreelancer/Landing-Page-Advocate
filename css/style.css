@@ -374,8 +374,8 @@ body {
   visibility: hidden;
 }
 .about__container.show {
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
@@ -800,6 +800,9 @@ body {
     padding: 1.875rem 0rem;
   }
 }
+.questions__body > *:last-child {
+  margin-bottom: 0em;
+}
 .questions__container > *:last-child {
   margin-bottom: 0em;
 }
@@ -820,211 +823,140 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 1.25em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 1.25rem;
   -webkit-transform: translate(60px, 60px);
       -ms-transform: translate(60px, 60px);
           transform: translate(60px, 60px);
   opacity: 0;
   visibility: hidden;
 }
+.questions__spoiler > *:last-child {
+  margin-bottom: 0em;
+}
 .questions__spoiler.show {
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
   opacity: 1;
   visibility: visible;
 }
-.questions__text {
-  padding: 0.625rem 0.9375rem;
-}
-.questions__text > *:last-child {
-  margin-bottom: 0em;
-}
-.questions__text p {
-  font-family: "Inter";
-  font-size: 1.25rem;
-  margin-bottom: 0.6em;
-  line-height: 135%;
-  -webkit-animation-name: transform;
-          animation-name: transform; /* приєднали сценарій */
-  -webkit-animation-delay: 0, 5s;
-          animation-delay: 0, 5s; /* затримка анімації */
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s; /* встановили час тривалості сценарію */
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear; /* плавність */
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
-  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-@media (max-width: 28.125em) {
-  .questions__text p {
-    margin-bottom: 0.9375em;
-    text-align: left;
-  }
-}
 .questions__title {
   font-family: "Inter";
-  font-weight: 500;
-  font-size: 1.5625rem;
-  margin-bottom: 0.6em;
+  font-size: 1.125rem;
+  margin-bottom: 0.8333333333em;
   line-height: 135%;
+  display: none;
+}
+.questions__title.open {
+  display: block;
+}
+.questions__toggle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.9375rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  background-color: #0e0e0d;
+  color: #fbf0e6;
+  font-size: 1.125rem;
+  padding: 0.9375rem;
+  line-height: 135%;
+  border: 0.0625rem solid transparent;
+  margin-bottom: 1.25em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
-@media (max-width: 28.4375em) {
-  .questions__title {
-    font-size: 1.25rem;
+@media (max-width: 31.25em) {
+  .questions__toggle {
     text-align: left;
   }
 }
-.questions__title::before {
-  content: "";
-  display: inline-block;
-  background-image: url(../icon/08.webp);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  width: 1.875rem;
-  height: 1.875rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.875rem;
-          flex: 0 0 1.875rem;
-  -webkit-transform: translateY(0.3125rem);
-      -ms-transform: translateY(0.3125rem);
-          transform: translateY(0.3125rem);
-  -webkit-animation-name: scale;
-          animation-name: scale; /* приєднали сценарій */
-  -webkit-animation-delay: 0, 5s;
-          animation-delay: 0, 5s; /* затримка анімації */
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s; /* встановили час тривалості сценарію */
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear; /* плавність */
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
-  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+.questions__toggle:hover {
+  background-color: #d5ae00;
+  border: 0.0625rem solid #0e0d0d;
+  color: #0e0d0d;
 }
-.questions__title--2::before {
-  content: "";
-  display: inline-block;
-  background-image: url(../icon/09.webp);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: contain;
-  width: 1.875rem;
-  height: 1.875rem;
+.questions .horizont-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: block;
+  width: 30px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.875rem;
-          flex: 0 0 1.875rem;
-  -webkit-transform: translateY(0.125rem);
-      -ms-transform: translateY(0.125rem);
-          transform: translateY(0.125rem);
-  -webkit-animation-name: scale;
-          animation-name: scale; /* приєднали сценарій */
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s; /* затримка анімації */
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s; /* встановили час тривалості сценарію */
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear; /* плавність */
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
-  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  height: 18px;
+  position: relative;
+  z-index: 5;
 }
-.questions__title--3::before {
+.questions .horizont-line::before, .questions .horizont-line::after {
   content: "";
-  display: inline-block;
-  background-image: url(../icon/10.webp);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: contain;
-  width: 1.875rem;
-  height: 1.875rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.875rem;
-          flex: 0 0 1.875rem;
-  -webkit-transform: translateY(0.125rem);
-      -ms-transform: translateY(0.125rem);
-          transform: translateY(0.125rem);
-  -webkit-animation-name: scale;
-          animation-name: scale; /* приєднали сценарій */
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s; /* затримка анімації */
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s; /* встановили час тривалості сценарію */
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear; /* плавність */
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
-  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  height: 18px;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-color: #ffffff;
+  margin-top: -1px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.questions__title--4::before {
-  content: "";
-  display: inline-block;
-  background-image: url(../icon/11.webp);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: contain;
-  width: 1.875rem;
-  height: 1.875rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.875rem;
-          flex: 0 0 1.875rem;
-  -webkit-transform: translateY(0.125rem);
-      -ms-transform: translateY(0.125rem);
-          transform: translateY(0.125rem);
-  -webkit-animation-name: scale;
-          animation-name: scale; /* приєднали сценарій */
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s; /* затримка анімації */
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s; /* встановили час тривалості сценарію */
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear; /* плавність */
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite; /* infinite -нескінченне */ /* або 1, 2, 3... */ /* кіл-сть повторень анімації */
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate; /* напрямок анімації - ця в зворотньому */
-  /*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+.questions .horizont-line::before {
+  top: 0;
 }
-.questions__title--5::before {
-  content: "";
-  display: inline-block;
-  background-image: url(../icon/12.webp);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: contain;
-  width: 1.875rem;
-  height: 1.875rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 1.875rem;
-          flex: 0 0 1.875rem;
-  -webkit-transform: translateY(0.125rem);
-      -ms-transform: translateY(0.125rem);
-          transform: translateY(0.125rem);
+.questions .horizont-line::after {
+  top: rotate(45deg);
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.line-open .questions .horizont-line::before, .line-open .questions .horizont-line::after {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  top: 0;
+  background-color: blue;
+}
+.line-open .questions .horizont-line::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-bottom: -1px;
+}
+.line-open .questions .horizont-line::after {
+  -webkit-transform: rotate(-225deg);
+      -ms-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  margin-bottom: -1px;
 }
 
 .advantages {
@@ -1100,8 +1032,8 @@ body {
   margin-bottom: 0em;
 }
 .advantages__item.show {
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
@@ -1190,8 +1122,8 @@ body {
   visibility: hidden;
 }
 .freedom__img.show {
-  -webkit-transition: all 1.3s;
-  transition: all 1.3s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
