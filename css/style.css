@@ -771,7 +771,7 @@ body {
 .servises__text p {
   font-size: 1.25rem;
   margin-bottom: 0.75em;
-  line-height: 145%;
+  line-height: 160%;
   font-family: "Inter";
   font-weight: 600;
   display: -webkit-box;
@@ -804,69 +804,6 @@ body {
 .servises__text p:hover::before {
   background-color: #1c1b1b;
   border: 0.0625rem solid #f4d694;
-}
-.servises__text .horizont-line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  display: block;
-  width: 30px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 30px;
-          flex: 0 0 30px;
-  height: 18px;
-  position: relative;
-  z-index: 5;
-}
-.servises__text .horizont-line::before, .servises__text .horizont-line::after {
-  content: "";
-  height: 18px;
-  width: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-  background-color: #ffffff;
-  margin-top: -1px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.servises__text .horizont-line::before {
-  top: 0;
-}
-.servises__text .horizont-line::after {
-  top: rotate(45deg);
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-.line-open .servises__text .horizont-line::before, .line-open .servises__text .horizont-line::after {
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-  top: 0;
-  background-color: blue;
-}
-.line-open .servises__text .horizont-line::before {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  margin-bottom: -1px;
-}
-.line-open .servises__text .horizont-line::after {
-  -webkit-transform: rotate(-225deg);
-      -ms-transform: rotate(-225deg);
-          transform: rotate(-225deg);
-  margin-bottom: -1px;
 }
 
 .questions {
