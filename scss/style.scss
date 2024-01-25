@@ -337,6 +337,9 @@ body {
 			@media(max-width: toEm(410)) {
 				margin-bottom: toEm(30, 25);
 			}
+			@media(max-width: toEm(380)) {
+				margin-bottom: toEm(20, 25);
+			}
 		}
 	}
 	// .team__cards
@@ -364,13 +367,11 @@ body {
 		border-radius: toRem(50);
 		border: toRem(5) solid rgba(180, 157, 10, 0.67);
 
-		background: url(../img/13.webp), url(../img/53.webp), #fbf0e6;		//офн для карточки
+		background-image: url(../img/Frame\ 31.webp);
 		background-repeat: no-repeat;
-		background-position: 0 0, 150% 100%;
-		background-size: toRem(350) toRem(350), toRem(450) toRem(350);
-		@media(max-width: toEm(370)) {
-			padding: toRem(15) toRem(15) toRem(0);
-		}
+		background-position: 0 0;
+		background-size: cover;
+
 
 		&::before {					// створили плашку при наведені на картку
 			content: "";
@@ -422,7 +423,7 @@ body {
 		color: #0e0d0d;
 		text-align: center;
 		font-size: toRem(25);
-		font-family: 'PFMonumentaPro';
+		font-family: 'Inter';
 		font-weight: 800;
 		line-height: 135%;
 		letter-spacing: toRem(1.5);
@@ -447,10 +448,13 @@ body {
 		aspect-ratio: 70 / 50;
 		object-fit: contain;
 		@media(max-width: toEm(992)) {
-			aspect-ratio: 250 / 200;
+			aspect-ratio: 250 / 300;
 		}
 		@media(max-width: toEm(450)) {
-			aspect-ratio: 200 / 200;
+			aspect-ratio: 200 / 300;
+		}
+		@media(max-width: toEm(320)) {
+			aspect-ratio: 200 / 300;
 		}
 	}
 
@@ -459,7 +463,7 @@ body {
 		color: #0e0d0d;
 		text-align: center;
 		font-size: toRem(25);
-		margin-bottom: toEm(30, 25);
+		margin-bottom: toEm(20, 25);
 		font-family: 'Inter';
 		font-weight: 700;
 		line-height: 130%;
@@ -548,7 +552,7 @@ body {
 
 //------------------------servises-------------------------
 .servises {
-	padding: toRem(80) toRem(0);
+	padding: toRem(80) toRem(0) toRem(20);
 	background-image: url(../img/012.webp);
 	background-repeat: no-repeat;
 	background-position: center right;
@@ -559,21 +563,31 @@ body {
 	@media(max-width: toEm(767.98)) {
 		padding: toRem(30) toRem(0);
 	}
+	& h2 {
+		font-family: 'PFMonumentaPro';
+		font-weight: 500;
+		font-size: toRem(25);
+		margin-bottom: toEm(40, 25);
+		line-height: 135%;
+		max-width: toRem(1270);
+		margin: 0 auto;
+		text-align: center;
+		padding: toRem(20);
+		@media(max-width: toEm(450)) {
+			text-align: center;
+			font-size: toRem(18);
+		}
+	}
 	// .servises__container
 	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: toRem(20);
+		@media(max-width: toEm(992)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 		& > *:last-child{
 			margin-bottom: toEm(0);
-		}
-		& h2 {
-			font-family: 'PFMonumentaPro';
-			font-weight: 500;
-			font-size: toRem(25);
-			margin-bottom: toEm(40, 25);
-			line-height: 135%;
-			@media(max-width: toEm(450)) {
-				margin-bottom: toEm(20, 20);
-				text-align: center;
-			}
 		}
 	}
 
@@ -588,7 +602,7 @@ body {
 		& p {
 			font-size: toRem(20);
 			margin-bottom: toEm(15, 20);
-			line-height: 135%;
+			line-height: 145%;
 			font-family: 'Inter';
 			font-weight: 600;
 			@media(max-width: toEm(450)) {
@@ -614,6 +628,64 @@ body {
 				}
 			
 		}
+
+
+//----------------------------------horizont-line---------burger------------------------------
+.horizont-line{
+	display: flex;				//---------------для horizont-line---------burger-----------------
+	justify-content: center;	//---------------для horizont-line---------burger-----------------
+	align-items: center;		//---------------для horizont-line---------burger-----------------
+	text-align: center;
+	
+	display: block;
+	width: 30px;
+	flex: 0 0 30px;
+	height: 18px;
+	position: relative;
+	z-index: 5;
+  
+	&::before, &::after {
+	  content: "";
+	  height: 18px;
+	  width: 2px;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  transform: rotate(90deg);
+	  background-color: #ffffff;
+	  margin-top: -1px;
+	transition: all 0.3s;
+	}
+  
+	&::before {
+	  top: 0;
+	}
+  
+	&::after {
+	  top: rotate(45deg);
+	  transform: rotate(0deg);
+	}
+  
+  .line-open & {
+	&::before, &::after {
+	  transform: rotate(0deg);
+	  top: 0;
+	  background-color: blue;
+	}
+  
+	&::before {
+	  transform: rotate(45deg);
+	  margin-bottom: -1px;
+	}
+  
+	&::after {
+	  transform: rotate(-225deg);
+	  margin-bottom: -1px;
+	}
+	}
+  }
+
+//----------------------------------horizont-line---------burger------------------------------
 	}
 }
 
@@ -933,17 +1005,6 @@ body {
 	// .freedom__img
 	&__img  {
 		margin-bottom: toEm(30);
-//---------javaScript----animation---------
-		transform: translate(60px, 60px);
-		opacity: 0;
-		visibility: hidden;
-			&.show {
-				transition: all 0.7s;
-				transform: translate(0px, 0px);
-				opacity: 1;
-				visibility: visible;
-			}
-//---------javaScript----animation---------
 	}
 	&__img img {
 		width: 100%;
@@ -997,6 +1058,198 @@ body {
 //---------javaScript----animation---------
 		@media(max-width: toEm(450)) {
 			font-size: toRem(18);
+		}
+	}
+}
+
+
+
+//---------------------------why-------------------------------
+.why {
+	background-color: #0e0d0d;
+	color: #e9e7e6;
+	padding: toRem(30) toRem(0) toRem(50) ;
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+	// .why__container
+	&__container {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		& h2 {
+			font-family: 'PFMonumentaPro';
+			font-weight: 500;
+			font-size: toRem(25);
+			margin-bottom: toEm(40, 25);
+			line-height: 135%;
+			text-align: center;
+			@media(max-width: toEm(455)) {
+				margin-bottom: toEm(20, 18);
+			}
+			@media(max-width: toEm(540)) {
+				font-size: toRem(20);
+			}
+		}
+		& h5 {
+			font-family: 'PFMonumentaPro';
+			font-weight: 500;
+			font-size: toRem(25);
+			margin-bottom: toEm(40, 25);
+			line-height: 135%;
+			text-align: center;
+			@media(max-width: toEm(455)) {
+				margin-bottom: toEm(20, 18);
+			}
+			@media(max-width: toEm(540)) {
+				font-size: toRem(20);
+			}
+		}
+	}
+
+	// .why__text
+	&__text {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		font-family: 'Inter';
+		font-weight: 500;
+		display: flex;
+		flex-wrap: wrap;		
+		margin: toRem(0) toRem(-20);
+		& span {
+			color: #d5ae00;
+			font-size: toRem(16);
+			font-family: 'Inter';
+			font-weight: 500;
+		}
+	}
+
+	// .why__left
+	&__left {
+		flex:0 1 50%;
+		padding: toRem(0) toRem(20);
+		& p {
+			font-size: toRem(20);
+			margin-bottom: toEm(30, 20);
+			line-height: 135%;
+	}
+	@media(max-width: toEm(1192)) {
+		flex:0 1 100%;
+	}
+	@media(max-width: toEm(540)) {
+		font-size: toRem(18);
+	}
+//---------javaScript----animation---------
+	transform: translate(40px, 40px);
+	opacity: 0;
+	visibility: hidden;
+		&.show {
+			transition: all 0.8s;
+			transform: translate(0px, 0px);
+			opacity: 1;
+			visibility: visible;
+		}
+//---------javaScript----animation---------
+}
+	// .why__right
+	&__right {
+		flex: 0 1 50%;
+		padding: toRem(0) toRem(20);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media(max-width: toEm(1192)) {
+			flex:0 1 100%;
+		}
+//---------javaScript----animation---------
+		transform: translate(0px, 40px);
+		opacity: 0;
+		visibility: hidden;
+			&.show {
+				transition: all 0.8s;
+				transform: translate(0px, 0px);
+				opacity: 1;
+				visibility: visible;
+			}
+//---------javaScript----animation---------
+	}
+
+	// .why__number
+	&__number {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@media(max-width: toEm(520)) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// .why__up
+	&__up {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		text-align: center;
+		& p {
+		font-size: toRem(32);
+		padding: toRem(32) toRem(65);
+		line-height: 135%;
+		border: toRem(1) solid rgba(232, 226, 226, 0.596);
+		transition: 0.5s;
+		&:hover {
+			background-color: #666666;
+		}
+		@media(max-width: toEm(1270)) {
+			padding: toRem(32) toRem(55);
+		}
+		@media(max-width: toEm(1192)) {
+			padding: toRem(32) toRem(155);
+		}
+		@media(max-width: toEm(951)) {
+			padding: toRem(32) toRem(75);
+		}
+		@media(max-width: toEm(631)) {
+			padding: toRem(32) toRem(45);
+		}
+		@media(max-width: toEm(510)) {
+			padding: toRem(32) toRem(95);
+		}
+		}
+	}
+
+	// .why__down
+	&__down {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		text-align: center;
+		& p {
+		border: toRem(1) solid rgba(232, 226, 226, 0.596);
+		font-size: toRem(32);
+		padding: toRem(32) toRem(65);
+		line-height: 135%;
+		transition: 0.5s;
+		&:hover {
+			background-color: #666666;
+		}
+		@media(max-width: toEm(1192)) {
+			padding: toRem(32) toRem(155);
+		}
+		@media(max-width: toEm(951)) {
+			padding: toRem(32) toRem(75);
+		}
+		@media(max-width: toEm(631)) {
+			padding: toRem(32) toRem(45);
+		}
+		@media(max-width: toEm(510)) {
+			padding: toRem(32) toRem(95);
+		}
 		}
 	}
 }

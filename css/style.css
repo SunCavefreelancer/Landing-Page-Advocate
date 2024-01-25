@@ -462,6 +462,11 @@ body {
     margin-bottom: 1.2em;
   }
 }
+@media (max-width: 23.75em) {
+  .team__container h3 {
+    margin-bottom: 0.8em;
+  }
+}
 .team__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -483,18 +488,13 @@ body {
   padding: 1.875rem 1.875rem 0rem;
   border-radius: 3.125rem;
   border: 0.3125rem solid rgba(180, 157, 10, 0.67);
-  background: url(../img/13.webp), url(../img/53.webp), #fbf0e6;
+  background-image: url(../img/Frame\ 31.webp);
   background-repeat: no-repeat;
-  background-position: 0 0, 150% 100%;
-  background-size: 21.875rem 21.875rem, 28.125rem 21.875rem;
+  background-position: 0 0;
+  background-size: cover;
 }
 .team__item > *:last-child {
   margin-bottom: 0em;
-}
-@media (max-width: 23.125em) {
-  .team__item {
-    padding: 0.9375rem 0.9375rem 0rem;
-  }
 }
 .team__item::before {
   content: "";
@@ -557,7 +557,7 @@ body {
   color: #0e0d0d;
   text-align: center;
   font-size: 1.5625rem;
-  font-family: "PFMonumentaPro";
+  font-family: "Inter";
   font-weight: 800;
   line-height: 135%;
   letter-spacing: 0.09375rem;
@@ -593,19 +593,24 @@ body {
 }
 @media (max-width: 62em) {
   .team__foto img {
-    aspect-ratio: 250/200;
+    aspect-ratio: 250/300;
   }
 }
 @media (max-width: 28.125em) {
   .team__foto img {
-    aspect-ratio: 200/200;
+    aspect-ratio: 200/300;
+  }
+}
+@media (max-width: 20em) {
+  .team__foto img {
+    aspect-ratio: 200/300;
   }
 }
 .team__name {
   color: #0e0d0d;
   text-align: center;
   font-size: 1.5625rem;
-  margin-bottom: 1.2em;
+  margin-bottom: 0.8em;
   font-family: "Inter";
   font-weight: 700;
   line-height: 130%;
@@ -709,7 +714,7 @@ body {
 }
 
 .servises {
-  padding: 5rem 0rem;
+  padding: 5rem 0rem 1.25rem;
   background-image: url(../img/012.webp);
   background-repeat: no-repeat;
   background-position: center right;
@@ -725,21 +730,35 @@ body {
     padding: 1.875rem 0rem;
   }
 }
-.servises__container > *:last-child {
-  margin-bottom: 0em;
-}
-.servises__container h2 {
+.servises h2 {
   font-family: "PFMonumentaPro";
   font-weight: 500;
   font-size: 1.5625rem;
   margin-bottom: 1.6em;
   line-height: 135%;
+  max-width: 79.375rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1.25rem;
 }
 @media (max-width: 28.125em) {
-  .servises__container h2 {
-    margin-bottom: 1em;
+  .servises h2 {
     text-align: center;
+    font-size: 1.125rem;
   }
+}
+.servises__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 62em) {
+  .servises__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.servises__container > *:last-child {
+  margin-bottom: 0em;
 }
 .servises__text {
   max-width: 56.25rem;
@@ -752,7 +771,7 @@ body {
 .servises__text p {
   font-size: 1.25rem;
   margin-bottom: 0.75em;
-  line-height: 135%;
+  line-height: 145%;
   font-family: "Inter";
   font-weight: 600;
   display: -webkit-box;
@@ -785,6 +804,69 @@ body {
 .servises__text p:hover::before {
   background-color: #1c1b1b;
   border: 0.0625rem solid #f4d694;
+}
+.servises__text .horizont-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  display: block;
+  width: 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  height: 18px;
+  position: relative;
+  z-index: 5;
+}
+.servises__text .horizont-line::before, .servises__text .horizont-line::after {
+  content: "";
+  height: 18px;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  background-color: #ffffff;
+  margin-top: -1px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.servises__text .horizont-line::before {
+  top: 0;
+}
+.servises__text .horizont-line::after {
+  top: rotate(45deg);
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.line-open .servises__text .horizont-line::before, .line-open .servises__text .horizont-line::after {
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  top: 0;
+  background-color: blue;
+}
+.line-open .servises__text .horizont-line::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-bottom: -1px;
+}
+.line-open .servises__text .horizont-line::after {
+  -webkit-transform: rotate(-225deg);
+      -ms-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  margin-bottom: -1px;
 }
 
 .questions {
@@ -1115,20 +1197,6 @@ body {
 }
 .freedom__img {
   margin-bottom: 1.875em;
-  -webkit-transform: translate(60px, 60px);
-      -ms-transform: translate(60px, 60px);
-          transform: translate(60px, 60px);
-  opacity: 0;
-  visibility: hidden;
-}
-.freedom__img.show {
-  -webkit-transition: all 0.7s;
-  transition: all 0.7s;
-  -webkit-transform: translate(0px, 0px);
-      -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-  opacity: 1;
-  visibility: visible;
 }
 .freedom__img img {
   width: 100%;
@@ -1189,5 +1257,243 @@ body {
 @media (max-width: 28.125em) {
   .freedom__sub-title {
     font-size: 1.125rem;
+  }
+}
+
+.why {
+  background-color: #0e0d0d;
+  color: #e9e7e6;
+  padding: 1.875rem 0rem 3.125rem;
+}
+@media (max-width: 62em) {
+  .why {
+    padding: 2.5rem 0rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .why {
+    padding: 1.875rem 0rem;
+  }
+}
+.why__container > *:last-child {
+  margin-bottom: 0em;
+}
+.why__container h2 {
+  font-family: "PFMonumentaPro";
+  font-weight: 500;
+  font-size: 1.5625rem;
+  margin-bottom: 1.6em;
+  line-height: 135%;
+  text-align: center;
+}
+@media (max-width: 28.4375em) {
+  .why__container h2 {
+    margin-bottom: 1.1111111111em;
+  }
+}
+@media (max-width: 33.75em) {
+  .why__container h2 {
+    font-size: 1.25rem;
+  }
+}
+.why__container h5 {
+  font-family: "PFMonumentaPro";
+  font-weight: 500;
+  font-size: 1.5625rem;
+  margin-bottom: 1.6em;
+  line-height: 135%;
+  text-align: center;
+}
+@media (max-width: 28.4375em) {
+  .why__container h5 {
+    margin-bottom: 1.1111111111em;
+  }
+}
+@media (max-width: 33.75em) {
+  .why__container h5 {
+    font-size: 1.25rem;
+  }
+}
+.why__text {
+  font-family: "Inter";
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0rem -1.25rem;
+}
+.why__text > *:last-child {
+  margin-bottom: 0em;
+}
+.why__text span {
+  color: #d5ae00;
+  font-size: 1rem;
+  font-family: "Inter";
+  font-weight: 500;
+}
+.why__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 0rem 1.25rem;
+  -webkit-transform: translate(40px, 40px);
+      -ms-transform: translate(40px, 40px);
+          transform: translate(40px, 40px);
+  opacity: 0;
+  visibility: hidden;
+}
+.why__left p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5em;
+  line-height: 135%;
+}
+@media (max-width: 74.5em) {
+  .why__left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+@media (max-width: 33.75em) {
+  .why__left {
+    font-size: 1.125rem;
+  }
+}
+.why__left.show {
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+.why__right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding: 0rem 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translate(0px, 40px);
+      -ms-transform: translate(0px, 40px);
+          transform: translate(0px, 40px);
+  opacity: 0;
+  visibility: hidden;
+}
+@media (max-width: 74.5em) {
+  .why__right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+.why__right.show {
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transform: translate(0px, 0px);
+      -ms-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+.why__number {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.why__number > *:last-child {
+  margin-bottom: 0em;
+}
+@media (max-width: 32.5em) {
+  .why__number {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.why__up {
+  text-align: center;
+}
+.why__up > *:last-child {
+  margin-bottom: 0em;
+}
+.why__up p {
+  font-size: 2rem;
+  padding: 2rem 4.0625rem;
+  line-height: 135%;
+  border: 0.0625rem solid rgba(232, 226, 226, 0.596);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.why__up p:hover {
+  background-color: #666666;
+}
+@media (max-width: 79.375em) {
+  .why__up p {
+    padding: 2rem 3.4375rem;
+  }
+}
+@media (max-width: 74.5em) {
+  .why__up p {
+    padding: 2rem 9.6875rem;
+  }
+}
+@media (max-width: 59.4375em) {
+  .why__up p {
+    padding: 2rem 4.6875rem;
+  }
+}
+@media (max-width: 39.4375em) {
+  .why__up p {
+    padding: 2rem 2.8125rem;
+  }
+}
+@media (max-width: 31.875em) {
+  .why__up p {
+    padding: 2rem 5.9375rem;
+  }
+}
+.why__down {
+  text-align: center;
+}
+.why__down > *:last-child {
+  margin-bottom: 0em;
+}
+.why__down p {
+  border: 0.0625rem solid rgba(232, 226, 226, 0.596);
+  font-size: 2rem;
+  padding: 2rem 4.0625rem;
+  line-height: 135%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.why__down p:hover {
+  background-color: #666666;
+}
+@media (max-width: 74.5em) {
+  .why__down p {
+    padding: 2rem 9.6875rem;
+  }
+}
+@media (max-width: 59.4375em) {
+  .why__down p {
+    padding: 2rem 4.6875rem;
+  }
+}
+@media (max-width: 39.4375em) {
+  .why__down p {
+    padding: 2rem 2.8125rem;
+  }
+}
+@media (max-width: 31.875em) {
+  .why__down p {
+    padding: 2rem 5.9375rem;
   }
 }
