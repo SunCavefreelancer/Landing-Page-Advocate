@@ -730,6 +730,19 @@ body {
     padding: 1.875rem 0rem;
   }
 }
+.servises::after {
+  content: "";
+  -webkit-transform: translateY(3.125rem);
+      -ms-transform: translateY(3.125rem);
+          transform: translateY(3.125rem);
+  display: block;
+  max-width: 59.375rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 0.0625rem; /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(30, 87, 153, 0)), color-stop(1%, rgba(30, 87, 153, 0.02)), color-stop(50%, rgb(0, 0, 0)), to(rgba(30, 87, 153, 0)));
+  background: linear-gradient(to right, rgba(30, 87, 153, 0) 0%, rgba(30, 87, 153, 0.02) 1%, rgb(0, 0, 0) 50%, rgba(30, 87, 153, 0) 100%); /* W3C */
+}
 .servises h2 {
   font-family: "PFMonumentaPro";
   font-weight: 500;
@@ -1263,9 +1276,9 @@ body {
 }
 .why::after {
   content: "";
-  -webkit-transform: translateY(1.25rem);
-      -ms-transform: translateY(1.25rem);
-          transform: translateY(1.25rem);
+  -webkit-transform: translateY(3.125rem);
+      -ms-transform: translateY(3.125rem);
+          transform: translateY(3.125rem);
   display: block;
   max-width: 59.375rem;
   margin: 0 auto;

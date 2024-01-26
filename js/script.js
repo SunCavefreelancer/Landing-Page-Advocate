@@ -1,6 +1,16 @@
 // Строгий режим
 "use strict"
 
+const icon = document.querySelector('.icon-menu');
+icon.addEventListener('click', function () {
+	document.documentElement.classList.toggle('menu-open');
+});
+
+/* ---------------------------------БУРГЕР МЕНЮ---------------------------------------- */
+
+
+
+
 
 /*---class = .advantages__item-----------кнопка-------------javascript-----------анимация по старнице----------*/
 let options = {
@@ -65,7 +75,7 @@ window.onload = function() {
 
 
 //----------------------------------horizont-line---------burger------------------------------
-	const icon = document.querySelector('.horizont-line');		//---------------(если для одного бургера то будет работать)--------------
+	const iconS = document.querySelector('.horizont-line');		//---------------(если для одного бургера то будет работать)--------------
 icon.addEventListener('click', function () {
 	document.documentElement.classList.toggle('line-open');
 });
