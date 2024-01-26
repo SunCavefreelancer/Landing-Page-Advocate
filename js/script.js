@@ -1,6 +1,7 @@
 // Строгий режим
 "use strict"
 
+/* ---------------------------------БУРГЕР МЕНЮ---------HEADER------------------------------- */
 const icon = document.querySelector('.icon-menu');
 const menuLinks = document.querySelectorAll('.menu__link');
 
@@ -13,37 +14,50 @@ menuLinks.forEach(link => {
     document.documentElement.classList.remove('menu-open');
   });
 });
+/* ---------------------------------БУРГЕР МЕНЮ---------HEADER------------------------------- */
 
+/* ------- ----------------планый переход по секциям с необрезанным верхом страницы ------------ (HEADER)--- ------------ */
 
-/* ---------------------------------БУРГЕР МЕНЮ---------------------------------------- */
-
-document.querySelectorAll("nav a").forEach(function (a) {
+document.querySelectorAll(".menu__link").forEach(function (a) {				/*<a href="index.html" class="menu__link">Home</a>*/
 	a.addEventListener("click", function (event) {
-	  event.preventDefault();
+  
 	  const hash = event.target.getAttribute("href");
 	  const scrollTarget = document.querySelector(hash);
-	  
-	  // Some additional logic
-	  const headerHeight = 90;
-	  window.scrollTo(0, scrollTarget.offsetTop - headerHeight);
+  
+  
+	  if (scrollTarget) {
+		const headerHeight = document.querySelector("header").offsetHeight;
+		window.scroll({
+		  top: scrollTarget.offsetTop - headerHeight,
+		  behavior: "smooth"
+		});
+	  }
+	  event.preventDefault();
 	});
   });
 
+/* ------- ----------------планый переход по секциям с необрезанным верхом страницы ------------ --- (HEADER) ------------ */
 
 
-
-
-/* ------- ---------------- ------------ ---------------- ------------ */
-
-
-
-
-
-
-
-
-
-
+/* ------- ----------------планый переход по секциям с необрезанным верхом страницы ------------ --- (FOOTER) ------------ */
+document.querySelectorAll(".footer__a").forEach(function (a) {				/*<a href="#home" class="footer__a">Home</a>*/
+	a.addEventListener("click", function (event) {
+  
+	  const hash = event.target.getAttribute("href");
+	  const scrollTarget = document.querySelector(hash);
+  
+  
+	  if (scrollTarget) {
+		const headerHeight = document.querySelector("header").offsetHeight;
+		window.scroll({
+		  top: scrollTarget.offsetTop - headerHeight,
+		  behavior: "smooth"
+		});
+	  }
+	  event.preventDefault();
+	});
+  });
+/* ------- ----------------планый переход по секциям с необрезанным верхом страницы ------------ --- (FOOTER) ------------ */
 
 
 
