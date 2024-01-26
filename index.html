@@ -19,11 +19,11 @@
 					<div class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item menu__item--vip">
-								<a href="#" class="menu__link">Home</a>
+								<a href="index.html" class="menu__link">Home</a>
 							</li>
 							<li class="menu__item menu__item--parent">
 								<!-- menu__item--parent модифікатор для стрілки вниз -->
-								<a href="#" class="menu__link">About Us</a>
+								<a href="#about" class="menu__link">About Us</a>
 								<div class="sub-menu"> <!-- вкладаємо 2 блок меню -->
 									<ul class="sub-menu__list">
 										<li class="sub-menu__item">
@@ -43,7 +43,7 @@
 							</li>
 							<li class="menu__item menu__item--parent">
 								<!-- menu__item--parent модифікатор для стрілки вниз -->
-								<a href="#" class="menu__link">Specialists</a>
+								<a href="#team" class="menu__link">Specialists</a>
 								<div class="sub-menu"> <!-- вкладаємо 2 блок меню -->
 									<ul class="sub-menu__list">
 										<li class="sub-menu__item">
@@ -62,10 +62,10 @@
 								</div> <!-- вкладаємо 2 блок меню -->
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Services</a>
+								<a href="#services" class="menu__link">Services</a>
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Contacts</a>
+								<a href="#contacts" class="menu__link">Contacts</a>
 							</li>
 						</ul>
 					</div>
@@ -82,7 +82,7 @@
 		</header>
 
 		<main class="main">
-			<section class="hero">
+			<section id="home" class="hero">
 				<div class="hero__container">
 					<div class="hero__content">
 						<div class="hero__img">
@@ -97,7 +97,7 @@
 			</section>
 
 
-			<section class="about">
+			<section id="about" class="about">
 				<div class="about__container about__container--anim">
 					<h2>Protection of individuals and legal entities.</h2>
 					<div class="about__text">
@@ -117,7 +117,7 @@
 			</section>
 
 
-			<section class="team">
+			<section id="team" class="team">
 				<div class="team__container">
 					<h3>Our leading specialists</h3>
 					<div class="team__cards">
@@ -319,7 +319,7 @@
 			</section>
 
 
-			<section class="servises">
+			<section  id="services"  class="servises">
 				<h2>We also provide services:</h2>
 				<div class="servises__container">
 
@@ -444,7 +444,7 @@
 
 
 
-			<section class="advantages">
+			<section id="advantages" class="advantages">
 				<div class="advantages__container">
 					<h2>Our advantages</h2>
 					<div class="advantages__cards">
@@ -568,7 +568,7 @@
 
 
 
-			<section class="freedom">
+			<section id="line" class="freedom">
 				<div class="freedom__container">
 					<h2>Letters of recommendation; Online consultation 24/7;</h2>
 					<div class="freedom__content">
@@ -621,7 +621,86 @@
 			</section>
 		</main>
 
-		<footer class="footer"></footer>
+		<footer id="contacts" class="footer">
+			<div class="footer__container">
+				<h2>Contact our company</h2>
+				<div class="footer__body">
+					<h3>Contacts</h3>
+					<div class="footer__cards">
+						<div class="footer__item"><!-- card 1 -->
+							<div class="footer__tel">
+								<p>Call us:</p>
+								<div class="footer__tel-block">
+										<img src="icon/icon04.webp" alt="icon soc set">
+										<a href="phoneto:24506358-95-547">+245 (063) 58-95-547</a>
+								</div>
+								<div class="footer__tel-block">
+										<img src="icon/icon04.webp" alt="icon soc set">
+										<a href="phoneto:+24506755-41-587">+245 (067) 55-41-587</a>
+								</div>
+							</div>
+							<div class="footer__join">
+								<p>Join</p>
+								<div class="footer__icons">
+									<img src="icon/icon01.webp" alt="icon soc set">
+									<img src="icon/icon02.webp" alt="icon soc set">
+									<img src="icon/icon03.webp" alt="icon soc set">
+								</div>
+							</div>
+							<div class="footer__mail">
+								<p>Write to E-mail:</p>
+								<div class="footer__mail-block">
+									<img src="icon/icon05.webp" alt="icon soc set">
+									<a href="mailto:@advocate_zashita.com" class="footer__a">E-mail:@advocate_zashita.com</a>
+								</div>
+							</div>
+						</div>
+
+					
+						<div class="footer__item"><!-- card 3 -->
+							<div class="footer__right">
+								<p>USA</p>
+								<p>Colorado</p>
+								<div class="footer__foto">
+									<img src="img/53.webp" alt="logo">
+								</div>
+								<div class="footer__foto">
+									<img src="img/logo-wills1.png" alt="logo">
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="footer__item"><!-- card 2 -->
+								<ul class="footer__list">
+									<li class="footer__link">
+										<a href="#home" class="footer__a">Home</a>
+									</li>
+									<li class="footer__link">
+										<a href="#about" class="footer__a">About Us</a>
+									</li>
+									<li class="footer__link">
+										<a href="#team" class="footer__a">Specialists</a>
+									</li>
+									<li class="footer__link">
+										<a href="#advantages" class="footer__a">Advantages</a>
+									</li>
+									<li class="footer__link">
+										<a  href="#services" class="footer__a">Services</a>
+									</li>
+									<li class="footer__link">
+										<a href="#line" class="footer__a">On-line: 24/7</a>
+									</li>
+									<li class="footer__link">
+										<a  href="#contacts" class="footer__a">Contacts</a>
+									</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 	<script src="js/script.js"></script>

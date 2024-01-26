@@ -946,6 +946,13 @@ body {
 			}
 		}
 
+		//__content {
+			&__content {
+				& > *:last-child{
+					margin-bottom: toEm(0);
+				}
+			}
+
 	// .freedom__img
 	&__img  {
 		margin-bottom: toEm(30);
@@ -954,6 +961,19 @@ body {
 		width: 100%;
 		height: 100%;
 		aspect-ratio: 650 / 400;
+
+		&__img img::before {
+			/*------------------------------------- полоска с прозрачными краями---------------------------*/
+						
+						background: -moz-linear-gradient(left, rgba(245, 247, 248, 0) 0%, rgba(240, 246, 245, 0.02) 1%, rgba(0,0,0,1) 50%, rgba(30,87,153,0) 100%); /* FF3.6+ */
+						background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(30,87,153,0)), color-stop(1%,rgba(30,87,153,0.02)), color-stop(50%,rgba(0,0,0,1)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
+						background: -webkit-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
+						background: -o-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* Opera 11.10+ */
+						background: -ms-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* IE10+ */
+						background: linear-gradient(to right, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* W3C */
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 */ 
+					}
+			/*-------------------------------------полоска с прозрачными краями--------------------------- */
 	}
 
 	// .freedom__title
@@ -1052,6 +1072,22 @@ body {
 				font-size: toRem(20);
 			}
 		}
+	}
+	&::after{
+		content: "";
+		transform: translateY(toRem(20));
+		display: block;
+		max-width: toRem(950);
+		margin: 0 auto;
+		width: 80%;
+		height: toRem(1);
+		background: -moz-linear-gradient(left, rgba(30,87,153,0) 0%, rgba(30,87,153,0.02) 1%, rgba(0,0,0,1) 50%, rgba(30,87,153,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(30,87,153,0)), color-stop(1%,rgba(30,87,153,0.02)), color-stop(50%,rgba(0,0,0,1)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* IE10+ */
+		background: linear-gradient(to right, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 */
 	}
 
 	// .why__text
@@ -1196,4 +1232,292 @@ body {
 		}
 		}
 	}
+}
+
+
+
+//----------------------------------------------------footer-----------------------------------
+.footer {
+	background-color: #0e0d0d;
+	color: #e9e7e6;
+	padding: toRem(80) toRem(20) toRem(50) ;
+	@media(max-width: toEm(992)) {
+		padding: toRem(40) toRem(0);
+	}
+	@media(max-width: toEm(767.98)) {
+		padding: toRem(30) toRem(0);
+	}
+
+
+	// .footer__container
+	&__container {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		& h2, h3 {
+			font-family: 'PFMonumentaPro';
+			font-weight: 500;
+			font-size: toRem(25);
+			margin-bottom: toEm(40, 25);
+			line-height: 135%;
+			text-align: center;
+			@media(max-width: toEm(455)) {
+				margin-bottom: toEm(20, 18);
+			}
+			@media(max-width: toEm(540)) {
+				font-size: toRem(20);
+			}
+		}
+	}
+
+	// .footer__body
+	&__body {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+	}
+
+
+	// .footer__cards
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: toRem(20);
+		@media(max-width: toEm(1235)) {
+			grid-template-columns: repeat(2,1fr);
+		}
+		@media(max-width: toEm(767)) {
+			grid-template-columns: repeat(1,1fr);
+		}}
+		&::after{
+			content: "";
+			transform: translateY(toRem(20));
+			display: block;
+			max-width: toRem(950);
+			margin: 0 auto;
+			width: 80%;
+			width: 100%;
+			height: toRem(1);
+			background: -moz-linear-gradient(left, rgba(30, 87, 153, 0) 0%, rgba(30,87,153,0.02) 1%, rgba(0,0,0,1) 50%, rgba(30,87,153,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(30,87,153,0)), color-stop(1%,rgba(30,87,153,0.02)), color-stop(50%,rgba(0,0,0,1)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* IE10+ */
+			background: linear-gradient(to right, rgba(30,87,153,0) 0%,rgba(30,87,153,0.02) 1%,rgba(0,0,0,1) 50%,rgba(30,87,153,0) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 */
+		}
+	
+
+		// .footer___item
+		&__item {
+			& > *:last-child{
+				margin-bottom: toEm(0);
+			}
+		}
+
+
+	// .footer__tel
+	&__tel {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		margin-bottom: toEm(30);
+		& a {
+			display: block;
+			display: flex;
+			align-items: center;
+		}
+		& p {
+			font-size: toRem(20);
+			margin-bottom: toEm(20, 20);
+			font-family: 'Inter';
+			font-weight: 600;
+		}
+		display: flex;
+		flex-direction: column;
+		gap: toRem(15);
+		font-size: toRem(20);
+		margin-bottom: toEm(20, 20);
+		font-family: 'Inter';
+		font-weight: 600;
+	}
+	&__tel-block {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		display: flex;
+		justify-content: flex-start;
+		gap: toRem(15);
+		& img{
+			width: toRem(30);
+			height: toRem(30);
+			aspect-ratio: 30 /30; 
+			object-fit: cover;
+			transition: 0.5s;
+
+//----------------anime--------------------
+	animation-name: trans; /* приєднали сценарій */
+	animation-delay: 0s; /* затримка анімації */
+	animation-duration: 3s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime--------------------
+		}
+	}
+
+	// .footer__join
+	&__join {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		margin-bottom: toEm(30);
+		& p {
+			font-size: toRem(20);
+			margin-bottom: toEm(20, 20);
+			font-family: 'Inter';
+			font-weight: 600;
+		}
+	}
+	&__icons {
+		display: flex;
+		justify-content: flex-start;
+		gap: toRem(15);
+	}
+	&__icons img{
+		width: toRem(30);
+		height: toRem(30);
+		aspect-ratio: 30 /30; 
+		object-fit: contain;
+
+//----------------anime--------------------
+	animation-name: wave; /* приєднали сценарій */
+	animation-delay: 0.1s; /* затримка анімації */
+	animation-duration: 1s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime--------------------
+	}
+	& > *:not(:last-child) {
+		margin-right: toRem(20);
+	}
+	
+	&__icons img:nth-child(2) {
+//----------------anime--------------------
+	animation-name: wave; /* приєднали сценарій */
+	animation-delay: 0.4s; /* затримка анімації */
+	animation-duration: 1s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime--------------------
+	}
+
+	&__icons img:nth-child(3) {
+//----------------anime--------------------
+			animation-name: wave; /* приєднали сценарій */
+			animation-delay: 0.6s; /* затримка анімації */
+			animation-duration: 1s; /* встановили час тривалості сценарію */
+			animation-timing-function: linear;/* плавність */
+			animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+			animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+			/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+			animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime--------------------
+	}
+
+	// .footer__mail
+	&__mail {
+		& > *:last-child{
+			margin-bottom: toEm(0);
+		}
+		margin-bottom: toEm(30);
+		& p {
+			font-size: toRem(20);
+			margin-bottom: toEm(20, 20);
+			font-family: 'Inter';
+			font-weight: 600;
+			align-items: center;
+		}
+	}
+		&__mail-block {
+			display: flex;
+			justify-content: flex-start;
+			gap: toRem(15);
+		
+		& img{
+			width: toRem(30);
+			height: toRem(30);
+			aspect-ratio: 30 /30; 
+			object-fit: contain;
+
+//----------------anime--------------------
+animation-name: trans; /* приєднали сценарій */
+animation-delay: 0s; /* затримка анімації */
+animation-duration: 3s; /* встановили час тривалості сценарію */
+animation-timing-function: linear;/* плавність */
+animation-iteration-count: infinite;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+//----------------anime--------------------
+		}
+		& a {
+			display: block;
+			display: flex;
+			align-items: center;
+			font-family: 'Inter';
+			font-weight: 600;
+		}
+	}
+	
+
+	&__list {
+		text-align: right;
+		@media(max-width: toEm(1235)) {
+			text-align: left;
+		}
+	}
+	// .footer__link
+	&__link {
+
+		font-size: toRem(20);
+		margin-bottom: toEm(25, 20);
+		font-family: 'Inter';
+		font-weight: 500;
+		transition: 0.5s;
+		&:hover {
+			text-decoration: underline;
+		}
+		&__a {
+			display: block;
+		}
+
+	}
+			//&__right {
+				&__right {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					& p {
+						font-size: toRem(20);
+						font-family: 'Inter';
+						font-weight: 600;margin-bottom: toEm(15, 20);
+					}
+				}
+				&__foto img {
+					width: 100%;
+					height: 100%;
+					aspect-ratio: 150 / 50;
+					object-fit: contain;
+				}
+
 }
