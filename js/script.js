@@ -2,8 +2,16 @@
 "use strict"
 
 const icon = document.querySelector('.icon-menu');
+const menuLinks = document.querySelectorAll('.menu__link');
+
 icon.addEventListener('click', function () {
-	document.documentElement.classList.toggle('menu-open');
+  document.documentElement.classList.toggle('menu-open');
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', function () {
+    document.documentElement.classList.remove('menu-open');
+  });
 });
 
 /* ---------------------------------БУРГЕР МЕНЮ---------------------------------------- */
@@ -75,8 +83,8 @@ window.onload = function() {
 
 
 //----------------------------------horizont-line---------burger------------------------------
-	const iconS = document.querySelector('.horizont-line');		//---------------(если для одного бургера то будет работать)--------------
+/* 	const iconS = document.querySelector('.horizont-line');		//---------------(если для одного бургера то будет работать)--------------
 icon.addEventListener('click', function () {
 	document.documentElement.classList.toggle('line-open');
-});
+}); */
 //----------------------------------horizont-line---------burger------------------------------
