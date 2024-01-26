@@ -14,7 +14,40 @@ menuLinks.forEach(link => {
   });
 });
 
+
 /* ---------------------------------БУРГЕР МЕНЮ---------------------------------------- */
+
+document.querySelectorAll("nav a").forEach(function (a) {
+	a.addEventListener("click", function (event) {
+	  event.preventDefault();
+	  const hash = event.target.getAttribute("href");
+	  const scrollTarget = document.querySelector(hash);
+	  
+	  // Some additional logic
+	  const headerHeight = 90;
+	  window.scrollTo(0, scrollTarget.offsetTop - headerHeight);
+	});
+  });
+
+
+
+
+
+/* ------- ---------------- ------------ ---------------- ------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
