@@ -66,7 +66,6 @@ document.querySelectorAll(".footer__a").forEach(function (a) {				/*<a href="#ho
 
 
 
-
 /*---class = .advantages__item-----------кнопка-------------javascript-----------анимация по старнице----------*/
 let options = {
 	root: null,
@@ -102,36 +101,28 @@ someElements.forEach(someElement => {
 
 
 
+/*-----кнопка-------------javascript-----СПОЙЛЕР----------------классный---------------------------------------*/
+
+document.addEventListener("click", documentActions);
+
+function documentActions(e) {
+	const targetElement = e.target;
 
 
-/* ------------------------------------spoiler---------------------------------------- */
-window.onload = function() {
-	var spoilers = document.getElementsByClassName('questions__toggle');
-	for(var i=0; i<spoilers.length; ++i){
-	  spoilers[i].addEventListener("click", function () {
-		var contentEl = this.parentElement.querySelector('.questions__title');
-		var isOpen = contentEl.classList.contains('open');
-		contentEl.classList[isOpen ? 'remove' : 'add']('open');
-		contentEl.setAttribute('aria-hidden', !isOpen);
-		this.setAttribute('aria-expanded', isOpen);
-	  });
-
-	  spoilers[i].addEventListener("keydown", function (e) {
-		if (e.keyCode === 13 || e.keyCode === 32) { // 13 is Enter, 32 is Space
-		  e.preventDefault();
-		  this.click();
-		  return false;
-		}
-	  });
+	if (targetElement.closest('[data-spoller]')) {
+		const currentElement = targetElement.closest('[data-spoller]');
+		currentElement.classList.toggle('active');
+		currentElement.nextElementSibling.hidden = !currentElement.nextElementSibling.hidden;
 	}
-  };
-  /* ------------------------------------spoiler---------------------------------------- */
+}
+
+const spollers = document.querySelectorAll('[data-spoller]');
+
+if (spollers.length) {
+	spollers.forEach(spoller => {
+		spoller.nextElementSibling.hidden = true;
+	});
+}
 
 
-
-//----------------------------------horizont-line---------burger------------------------------
-/* 	const iconS = document.querySelector('.horizont-line');		//---------------(если для одного бургера то будет работать)--------------
-icon.addEventListener('click', function () {
-	document.documentElement.classList.toggle('line-open');
-}); */
-//----------------------------------horizont-line---------burger------------------------------
+/*-----кнопка-------------javascript-----СПОЙЛЕР----------------классный---------------------------------------*/

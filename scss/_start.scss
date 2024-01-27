@@ -1,0 +1,61 @@
+//@use "sass:math";
+
+
+// Функції
+//@import "_function.scss";
+
+// Підключення шрифтів
+//@import "_fonts.scss";
+
+// Скидання стилів
+//@import "_reset.scss";
+
+// Компоненти, сторінки
+//@import "_common.scss";
+
+// Компоненти, сторінки
+//@import "header.css";
+
+// Компоненти, сторінки
+//@import "animation.css";
+
+// Компоненти, сторінки
+//@import "footer.css";
+
+
+
+//=============_scss======================*  
+//чуйна властивість-----адаптив-----замість @media-----=====*
+// @include adaptiveValue("padding-left", 85, 0, 0, $containerWidth, 768);
+
+// @include adaptiveValue("padding-top", 75, 30);		(от 75рх до 30рх)
+
+
+
+
+//================_scss===================*
+//Кольори
+// $mainColor: #464545;			н/п: bakground-colol: $mainColor;
+// $darkColor: #020c56;			н/п: color: $darkColor;
+// $pinkColor: #ff47f3;
+// $liteColor: #d6d7de;
+
+
+
+
+//================_fonts.scss===================*
+//Шаблон для шрифта
+
+// %CS {
+// font-family:"CoreSans";
+
+//====в===_scss=====
+// .title { 
+//		@extend %CS; 
+//		font-wieght: 600;
+//	}
+
+
+
+
+//================_fonts.scss===================*
