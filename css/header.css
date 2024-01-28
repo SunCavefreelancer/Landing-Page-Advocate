@@ -288,12 +288,12 @@
 		/* збільшуємо відступи самі пункти меню */
 	}
 
-	.menu__item--parent .menu__link {
+	.menu__link {
 		display: block;
 		/* прибрали галочку від пункта */
 	}
 
-	.menu__item--parent .menu__link::after {
+	.menu__link::after {
 		display: none;
 		/* прибрали галочку від пункта */
 	}
