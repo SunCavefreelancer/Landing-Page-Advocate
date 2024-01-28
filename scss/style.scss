@@ -604,63 +604,6 @@ body {
 		& > *:last-child{
 			margin-bottom: toEm(0);
 		}
-
-
-		//----------------------------------horizont-line---------burger------------------------------
-.horizont-line{
-	display: flex;				//---------------для horizont-line---------burger-----------------
-	justify-content: center;	//---------------для horizont-line---------burger-----------------
-	align-items: center;		//---------------для horizont-line---------burger-----------------
-	text-align: center;
-	
-	display: block;
-	width: 30px;
-	flex: 0 0 30px;
-	height: 18px;
-	position: relative;
-	z-index: 5;
-  
-	&::before, &::after {
-	  content: "";
-	  height: 18px;
-	  width: 2px;
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  transform: rotate(90deg);
-	  background-color: #ffffff;
-	  margin-top: -1px;
-	transition: all 0.3s;
-	}
-  
-	&::before {
-	  top: 0;
-	}
-  
-	&::after {
-	  top: rotate(45deg);
-	  transform: rotate(0deg);
-	}
-  
-  .line-open & {
-	&::before, &::after {
-	  transform: rotate(0deg);
-	  top: 0;
-	  background-color: blue;
-	}
-  
-	&::before {
-	  transform: rotate(45deg);
-	  margin-bottom: -1px;
-	}
-  
-	&::after {
-	  transform: rotate(-225deg);
-	  margin-bottom: -1px;
-	}
-	}
-  } 
-  //----------------------------------horizont-line---------burger------------------------------
 	}
 
 	// .servises__text
